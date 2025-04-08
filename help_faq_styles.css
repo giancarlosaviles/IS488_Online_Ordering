@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #000000;
+    background-color: #c7c8ca;
+}
+
+header {
+    background-color: #fdb515;
+    color: #000000;
+    padding: 10px;
+    text-align: center;
+}
+
+section {
+    margin: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item h3 {
+    color: #da2128;
+}
+
+.faq-item p {
+    color: #636466;
+}
+
+footer {
+    background-color: #007176;
+    color: #ffffff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
