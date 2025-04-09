@@ -1,0 +1,50 @@
+
+
+
+
+* {
+	
+	margin: 0; 
+	padding: 9; 
+	font-family: sans-serif;
+}
+
+
+body {
+	
+background-color: gold; 
+
+	
+  
+} 
+
+
+h1 {
+	text-align: center;
+	color:#0000cc; 
+} 
+
+p {
+	color: purple; 
+	font-weight: bold;
+} 
+
+ul{
+	background: #000000;
+} 
+
+ul li {
+	display: inline-block;
+
+
+}
+
+ul li a{
+	display: block; 
+	padding: 10px 45px; 
+	color: #da2128;
+	text-align: center; 
+}
+
+
+ 

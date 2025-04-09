@@ -1,0 +1,61 @@
+
+body { 
+ background-color: gold;
+ 
+}
+
+
+
+h1 {
+	text-align: center;
+	color: navy; 
+}
+
+
+
+p {
+	
+	color: red;
+	font-size: 20px;
+}
+
+.number2 {
+	
+	color: teal;
+}
+
+.number3 {
+	
+	color: red;
+} 
+
+.number4 {
+	color: purple;
+	font-size: 15px; 
+	font-weight: bold; 
+} 
+
+
+table, td, th {
+	border: 3px solid black;
+	 background: white; 
+	 color: red;
+	 font-weight: bold; 
+	
+} 
+
+ul {
+  list-style-type: none;
+} 
+
+
+a:hover {
+  color: hotpink;
+
+  
+}
+
+input {
+	color: purple;
+	font-weight: bold; 
+}

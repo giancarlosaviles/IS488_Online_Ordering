@@ -1,0 +1,52 @@
+
+body{
+	background-color: gold;
+} 
+
+h1 {
+	text-align: center; 
+	color: navy; 
+} 
+
+
+p {
+	color: teal;
+	font-size: 25px;
+
+}
+
+table, th, td{
+	 border: 1px solid black;
+	 background: white; 
+	 color: purple; 
+	 font-weight: bold; 
+	 
+} 
+
+.number2 {
+	font-size: 15px;
+	font-weight: bold; 
+} 
+
+
+.number3 {
+	font-size: 15px; 
+	color: red; 
+	font-weight: bold; 
+} 
+
+ul {
+  list-style-type: none;
+} 
+
+/* When you hover over the link, it will turn pink */
+a:hover {
+  color: hotpink;
+
+  
+}
+
+input {
+	color: purple;
+	font-weight: bold; 
+}
