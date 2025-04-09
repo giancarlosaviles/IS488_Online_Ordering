@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Retrieveverdash Review</title>
+    <link rel="stylesheet" href="design.css">
+</head>
+<body>
+    <div class="container">
+        <img src="logo.png" alt="Retrieveverdash Logo" class="logo">
+        <h1>Leave a Review</h1>
+        <form action="goodbye.html" method="get">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="restaurant">Restaurant:</label>
+            <input type="text" id="restaurant" name="restaurant" required>
+
+            <label for="review">Your Review:</label>
+            <textarea id="review" name="review" rows="4" required></textarea>
+
+            <label for="stars">Rating:</label>
+            <select id="stars" name="stars" required>
+                <option value="">Select</option>
+                <option value="1">⭐</option>
+                <option value="2">⭐⭐</option>
+                <option value="3">⭐⭐⭐</option>
+                <option value="4">⭐⭐⭐⭐</option>
+                <option value="5">⭐⭐⭐⭐⭐</option>
+            </select>
+
+            <button type="submit">Submit Review</button>
+        </form>
+    </div>
+</body>
+</html>
