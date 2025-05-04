@@ -1,4 +1,3 @@
-<!DOCTYPE html> 
 <html lang="en">
 
 <head>
@@ -16,18 +15,21 @@
 
 <h1> Absurd Bird & Burgers Menu </h1>
 
-  <img src="Burger.jpg" alt="food" width="250" height="250">
+  <img src="Burger.jpg" alt="food" class="animated-burger" width="250" height="250">
 
 <p class = "number3" >  Thank you for choosing Absurd Bird & Burgers Menu
-here are the list of our menu we currently have! </p>
+here are the list of our menu we currently have: </p>
 
 
-
+<form action="Absurd_Bird_Burgers.php" method="POST">
 
 
 <label>
-  <input type="checkbox"  >  Buffalo Ranch Chicken Sandwich
+  <input type="checkbox" name = "Food[]" value = "Buffalo Ranch Chicken Sandwich"  > Buffalo Ranch Chicken Sandwich
 </label>
+
+<details>
+<summary> Nutrient Fact </summary>
 <table>
   <tr><td>Calories:</td><td>810</td></tr>
   <tr><td>Calories From Fat:</td><td>360</td></tr>
@@ -48,12 +50,14 @@ here are the list of our menu we currently have! </p>
   <tr><td>Vitamin C:</td><td>0+mg</td></tr>
   <tr><td>Vitamin A:</td><td>0+ RE</td></tr>
 </table>
-
+</details>
 <br>
 
 <label>
-  <input type="checkbox" > Chicken Philly Cheesesteak
+  <input type="checkbox" name = "Food[]" value = " Chicken Philly Cheesesteak" > Chicken Philly Cheesesteak
 </label>
+<details>
+<summary> Nutrient Fact </summary>
 <table>
   <tr><td>Calories:</td><td>530</td></tr>
   <tr><td>Calories From Fat:</td><td>200</td></tr>
@@ -74,12 +78,15 @@ here are the list of our menu we currently have! </p>
   <tr><td>Vitamin C:</td><td>63mg</td></tr>
   <tr><td>Vitamin A (RE):</td><td>-</td></tr>
 </table>
+</details>
 
 <br> 
 
 <label>
-  <input type="checkbox" > Chicken Biscuit Sandwich
+  <input type="checkbox" name = "Food[]" value = "Chicken Biscuit Sandwich" > Chicken Biscuit Sandwich
 </label>
+<details>
+<summary> Nutrient Fact </summary>
 <table>
   <tr><td>Calories:</td><td>510</td></tr>
   <tr><td>Calories From Fat:</td><td>170</td></tr>
@@ -100,14 +107,17 @@ here are the list of our menu we currently have! </p>
   <tr><td>Vitamin C:</td><td>0mg+</td></tr>
   <tr><td>Vitamin A (RE):</td><td>10+</td></tr>
 </table>
+</details>
 
 <br>
 
 <label>
-  <input type="checkbox" > Chicky Parm Sandwich
+  <input type="checkbox" name = "Food[]"  value = "Chicky Parm Sandwich" > Chicky Parm Sandwich
 </label>
 <p class = "number2" > Potato crusted chicken, mozzarella, pesto mayo, tomato sauce, on brioche </p>
 
+<details>
+<summary> Nutrient Fact </summary>
 <table>
   <tr><td>Calories:</td><td>510</td></tr>
   <tr><td>Calories From Fat:</td><td>300</td></tr>
@@ -128,17 +138,21 @@ here are the list of our menu we currently have! </p>
   <tr><td>Vitamin C:</td><td>19mg+</td></tr>
   <tr><td>Vitamin A (RE):</td><td>25+</td></tr>
 </table>
-
+</details>
 
 
 <br>
 
 <label>
-  <input type="checkbox" > Chicken Bacon Ranch in a White Wrap
+  <input type="checkbox" name = "Food[]" value = "Chicken Bacon Ranch in a White Wrap"  > Chicken Bacon Ranch in a White Wrap
 </label>
 
 <p class = "number2" > Grilled Chicken, Bacon & Ranch in a White Wrap
 
+
+
+<details>
+<summary> Nutrient Fact </summary>
 <table>
   <tr><td>Calories:</td><td>670</td></tr>
   <tr><td>Calories From Fat:</td><td>330</td></tr>
@@ -159,15 +173,20 @@ here are the list of our menu we currently have! </p>
   <tr><td>Vitamin C:</td><td>6mg+</td></tr>
   <tr><td>Vitamin A (RE):</td><td>5+</td></tr>
 </table>
+</details>
 
 <br>
 
 <label>
-  <input type="checkbox" > Big Daddy Turkey
+  <input type="checkbox" name = "Food[]"  value = "Big Daddy Turkey"  > Big Daddy Turkey
 </label>
 
 <p class = "number2" > turkey, provolone, arugula, tomato, pickled onion, pesto mayo, sourdough
 
+
+
+<details>
+<summary> Nutrient Fact </summary>
 <table>
   <tr><td>Calories:</td><td>540</td></tr>
   <tr><td>Calories From Fat:</td><td>200</td></tr>
@@ -188,12 +207,18 @@ here are the list of our menu we currently have! </p>
   <tr><td>Vitamin C:</td><td>11mg+</td></tr>
   <tr><td>Vitamin A (RE):</td><td>15+</td></tr>
 </table>
+</details>
 
 <br>
 
 <label>
-  <input type="checkbox" > Pollo House Chicken Wings
+  <input type="checkbox" name = "Food[]"  value = "Pollo House Chicken Wings"  > Pollo House Chicken Wings
 </label>
+
+
+
+<details>
+<summary> Nutrient Fact </summary>
 <table>
   <tr><td>Calories:</td><td>460</td></tr>
   <tr><td>Calories From Fat:</td><td>290</td></tr>
@@ -215,12 +240,19 @@ here are the list of our menu we currently have! </p>
   <tr><td>Vitamin A (RE):</td><td>-</td></tr>
   <tr><td>Avoid Gluten</td><td></td></tr>
 </table>
-
+</details>
 <br> 
 
+
+
+
+
 <label>
-  <input type="checkbox" > Chicken Tenders
+  <input type="checkbox" name = "Food[]"  value = "Chicken Tenders" > Chicken Tenders
 </label>
+
+<details>
+<summary> Nutrient Fact </summary>
 <table>
   <tr><td>Calories:</td><td>310</td></tr>
   <tr><td>Calories From Fat:</td><td>160</td></tr>
@@ -240,14 +272,18 @@ here are the list of our menu we currently have! </p>
   <tr><td>Vitamin D:</td><td>-</td></tr>
   <tr><td>Vitamin C:</td><td>0mg</td></tr>
 </table>
+</details>
 
-<input type = "Submit" >
-<input type = "Reset" >
+<br> 
+
+ <button type= "submit">Submit  </button>
+ <button type= "Reset"> Reset </button>
+ 
 
 
 
 <p class = "number3" > Please click on the following links
-to go back another menu page on Campus </p>
+to go back another menu page on Campus: </p>
 
 
 <ul > 
@@ -265,9 +301,10 @@ to go back another menu page on Campus </p>
 
 
 
-
-
+</form>
 </div>
 </body>
 
 </html>
+
+

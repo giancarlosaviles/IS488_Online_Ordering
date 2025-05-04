@@ -7,20 +7,27 @@
 </head>
 <body>
 
+
+
+
 <div class="number1">
   <h1>Chick-fil-A Menu</h1>
-  <img src="Chick.jpg" alt="food" width="250" height="250">
+  <img src="Chick.jpg"   alt="food" class = "animated-chicken" width="250" height="250">
 
   <p>Thank you for choosing Chick-fil-A Menu. Here are the list of menu items we currently offer:</p>
+  
+  <form action = "Chicken.php" method = "POST">
 
   <p class="number2">Drink Menu:</p>
 
   <label>
-    <input type="checkbox" >Freshly-Brewed Iced Tea Unsweetened
+    <input type="checkbox" name = "Food[]" value = "Freshly-Brewed Iced Tea Unsweetened"  > Freshly-Brewed Iced Tea Unsweetened
  </label>
- 
+ <p class = "number5" > Ingredients: </p>
  <p class = "number4" > Classic lemonade using three simple ingredients: real lemon juice—not from concentrate, cane sugar, and water. </p>
+ <details>
  
+ <summary>Nutrition Facts</summary>
   <table>
     <tr><td>Fat Calories:</td><td>0</td></tr>
     <tr><td>Total Fat:</td><td>0 g</td></tr>
@@ -38,13 +45,19 @@
     <tr><td>Calcium:</td><td>0 g</td></tr>
     <tr><td>Iron:</td><td>0 g</td></tr>
   </table>
+  </details>
+  
+  
+ <br>
 
-  <br>
+<label>
+  <input type="checkbox"  name = "Food[]" value = "Chick-fil-A® Lemonade" > Chick-fil-A® Lemonade
+</label>
 
-  <label>
-    <input type="checkbox" > Chick-fil-A® Lemonade
-  </label>
-  <p class = "number4" > Classic lemonade using three simple ingredients: real lemon juice—not from concentrate, cane sugar, and water.</p>
+ <p class = "number5" > Ingredients: </p>
+<p class="number4">Classic lemonade using three simple ingredients: real lemon juice—not from concentrate, cane sugar, and water.</p>
+<details>
+  <summary>Nutrition Facts</summary>
   <table>
     <tr><td>Fat Calories:</td><td>0</td></tr>
     <tr><td>Total Fat:</td><td>0 g</td></tr>
@@ -62,15 +75,18 @@
     <tr><td>Calcium:</td><td>0 g</td></tr>
     <tr><td>Iron:</td><td>0 g</td></tr>
   </table>
+</details>
 
-  <br>
+<br>
 
-  <label>
-    <input type="checkbox" > Chick-fil-A® Diet Lemonade
-  </label>
-  
-  <p class = "number4" > Classic lemonade using three simple ingredients: real lemon juice—not from concentrate, cane sugar, and water. Diet Lemonade is sweetened with Splenda® No Calorie Sweetener. </p>
-  
+<label>
+  <input type="checkbox"  name = "Food[]" value = "Chick-fil-A® Lemonade"  > Chick-fil-A® Diet Lemonade
+</label>
+
+<p class = "number5" > Ingredients: </p>
+<p class="number4">Classic lemonade using three simple ingredients: real lemon juice—not from concentrate, cane sugar, and water. Diet Lemonade is sweetened with Splenda® No Calorie Sweetener.</p>
+<details>
+  <summary>Nutrition Facts</summary>
   <table>
     <tr><td>Fat Calories:</td><td>0</td></tr>
     <tr><td>Total Fat:</td><td>0 g</td></tr>
@@ -88,18 +104,20 @@
     <tr><td>Calcium:</td><td>0 g</td></tr>
     <tr><td>Iron:</td><td>0 g</td></tr>
   </table>
+</details>
 
-  <br>
+<br>
 
-  <p class="number3">Here are the Entrees:</p>
+<p class="number2">Here are the Entrees:</p>
 
-  <label>
-    <input type="checkbox" > Chick-fil-A® Chicken Sandwich
-  </label>
-  
-   <p class = "number4" > A boneless breast of chicken seasoned to perfection, hand-breaded, pressure cooked in 100% refined peanut oil and served on a toasted, buttered bun with dill pickle chips. </p>
-  
-  
+<label>
+  <input type="checkbox" name = "Food[]" value = " Chick-fil-A® Chicken Sandwich" > Chick-fil-A® Chicken Sandwich
+</label>
+
+<p class = "number5" > Ingredients: </p>
+<p class="number4">A boneless breast of chicken seasoned to perfection, hand-breaded, pressure cooked in 100% refined peanut oil and served on a toasted, buttered bun with dill pickle chips.</p>
+<details>
+  <summary>Nutrition Facts</summary>
   <table>
     <tr><td>Fat Calories:</td><td>153</td></tr>
     <tr><td>Total Fat:</td><td>17 g</td></tr>
@@ -117,16 +135,18 @@
     <tr><td>Calcium:</td><td>0 g</td></tr>
     <tr><td>Iron:</td><td>0 g</td></tr>
   </table>
+</details>
 
-  <br>
+<br>
 
-  <label>
-    <input type="checkbox" > Spicy Chicken Sandwich
-  </label>
-  
-   <p class = "number4" > A boneless breast of chicken seasoned with a spicy blend of peppers, hand-breaded, pressure cooked in 100% refined peanut oil and served on a toasted, buttered bun with dill pickle chips. </p>
-  
-  
+<label>
+  <input type="checkbox" name = "Food[]" value = "Spicy Chicken Sandwich" > Spicy Chicken Sandwich 
+</label>
+
+<p class = "number5" > Ingredients: </p>
+<p class= "number4">A boneless breast of chicken seasoned with a spicy blend of peppers, hand-breaded, pressure cooked in 100% refined peanut oil and served on a toasted, buttered bun with dill pickle chips.</p>
+<details>
+  <summary>Nutrition Facts</summary>
   <table>
     <tr><td>Fat Calories:</td><td>171</td></tr>
     <tr><td>Total Fat:</td><td>19 g</td></tr>
@@ -144,14 +164,21 @@
     <tr><td>Calcium:</td><td>0 g</td></tr>
     <tr><td>Iron:</td><td>0 g</td></tr>
   </table>
+</details>
 
-  <br>
+<br>
 
-  <label>
-    <input type="checkbox" > Spicy Chicken Sandwich Deluxe 
-  </label>
+<label>
+  <input type="checkbox" name = "Food[]" value = "Spicy Chicken Sandwich Deluxe" > Spicy Chicken Sandwich Deluxe
+</label>
+
+
+<p class = "number5" > Ingredients: </p>
+<p class="number4">A boneless breast of chicken seasoned with a spicy blend of peppers, hand-breaded, pressure cooked in 100% refined peanut oil and served on a toasted, buttered bun with dill pickle chips, Green Leaf lettuce, tomato and Pepper Jack Cheese.</p>
+<details>
   
-  <p class = "number4" >  A boneless breast of chicken seasoned with a spicy blend of peppers, hand-breaded, pressure cooked in 100% refined peanut oil and served on a toasted, buttered bun with dill pickle chips, Green Leaf lettuce, tomato and Pepper Jack Cheese. </p>
+  
+  <summary>Nutrition Facts</summary>
   <table>
     <tr><td>Fat Calories:</td><td>225</td></tr>
     <tr><td>Total Fat:</td><td>25 g</td></tr>
@@ -169,20 +196,24 @@
     <tr><td>Calcium:</td><td>0 g</td></tr>
     <tr><td>Iron:</td><td>0 g</td></tr>
   </table>
+</details>
 
-  <input type="Submit">
-  <input type="Reset">
-</div>
+
+ <button type= "submit">Submit  </button>
+ <button type= "Reset"> Reset </button>
+
 
 
 <p class = "number3" > Please click on the following links
 to go back another menu page on Campus </p>
 
 
-<ul > 
+
+
+<ul> 
 
 <li> <a href = "Menu.html" > Return back to the menu selection page </a> </li>
-<li> <a href = "Absurd_Bird_Burgers.html" > Absurd Bird & Burgers </a> </li>
+<li> <a href = "Chick-fil-A.html" > Chick-fil-A </a> </li>
 <li> <a href = "Dunkin.html" > Dunkin </a> </li>
 <li> <a href = "Einstein.html" > Einstein Brother's Bagels </a> </li>
 <li> <a href = "Halal_Shack.html" > Halal Shack </a> </li>
@@ -192,5 +223,7 @@ to go back another menu page on Campus </p>
 
 </ul>
 
+</form>
+</div>
 </body>
 </html>

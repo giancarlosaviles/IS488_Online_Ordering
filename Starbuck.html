@@ -9,16 +9,25 @@
 
 <body>
 <div class="number1"> 
+
+<h1> Starbucks </h1>
   
-  <img src="coffee.jpg" alt="food" width="350" height="360">
-  <h1> Starbuck </h1>
+  <img src="coffee.jpg" alt="food" class = "animated-coffee"  width="350" height="360">
+  
   <p> Here are the Frappuccino® Blended Beverages Drinks menu: </p>
 
+
+<form action = "Starbucks.php" method = "POST" >
   <label>
-    <input type="checkbox"> Café Vanilla Frappuccino®
+    <input type="checkbox"  name = "Food[]" value = "Café Vanilla Frappuccino®" > Café Vanilla Frappuccino®
   </label>
   
   <p class = "number2" > Coffee with vanilla bean powder, blended with whole milk and ice. Topped with sweetened whipped cream.  </p>
+  
+  
+  <details>
+<summary> Nutrient Fact </summary>
+<table>
   <table>
     <tr><td>Fat Calories:</td><td>90</td></tr>
     <tr><td>Total Fat:</td><td>11 g</td></tr>
@@ -36,13 +45,18 @@
     <tr><td>Calcium:</td><td>100 mg</td></tr>
     <tr><td>Iron:</td><td>0 g</td></tr>
   </table>
+  </details>
 
   <label>
-    <input type="checkbox"> Venti Caramel Frappuccino®
+    <input type="checkbox" name = "Food[]" value = "Venti Caramel Frappuccino®" > Venti Caramel Frappuccino®
   </label>
   
    <p class = "number2" > Coffee blended with caramel sauce, whole milk and ice. Topped with whipped cream and caramel sauce. </p>
   
+  
+  <details>
+<summary> Nutrient Fact </summary>
+<table>
   <table>
     <tr><td>Fat Calories:</td><td>150</td></tr>
     <tr><td>Total Fat:</td><td>17 g</td></tr>
@@ -60,12 +74,18 @@
     <tr><td>Calcium:</td><td>0 g</td></tr>
     <tr><td>Iron:</td><td>0 g</td></tr>
   </table>
+  </details>
 
   <label>
-    <input type="checkbox" > Java Chip Frappuccino®
+    <input type="checkbox" name = "Food[]" value = "Java Chip Frappuccino®" > Java Chip Frappuccino®
   </label>
   
   <p class = "number2" > Coffee with rich mocha-flavored sauce blended with milk, chocolaty chips and ice. Topped with sweetened whipped cream and chocolate flavored drizzle. </p>
+  
+  
+  <details>
+<summary> Nutrient Fact </summary>
+<table>
   <table>
     <tr><td>Fat Calories:</td><td>120</td></tr>
     <tr><td>Total Fat:</td><td>13 g</td></tr>
@@ -83,13 +103,18 @@
     <tr><td>Calcium:</td><td>100 mg</td></tr>
     <tr><td>Iron:</td><td>2.7 mg</td></tr>
   </table>
+  </details>
 
   <label>
-    <input type="checkbox" > Mocha Frappuccino®
+    <input type="checkbox" name = "Food[]" value = "Mocha Frappuccino®"	> Mocha Frappuccino®
   </label>
   
   <p class = "number2" > Coffee with rich mocha flavored sauce blended with milk and ice. Topped with sweetened whipped cream. </p>
   
+  
+  <details>
+<summary> Nutrient Fact </summary>
+<table>
   <table>
     <tr><td>Fat Calories:</td><td>150</td></tr>
     <tr><td>Total Fat:</td><td>17 g</td></tr>
@@ -107,13 +132,17 @@
     <tr><td>Calcium:</td><td>200 mg</td></tr>
     <tr><td>Iron:</td><td>1.8 mg</td></tr>
   </table>
+  </details>
 
   <label>
-    <input type="checkbox" > Chai Crème Frappuccino®
+    <input type="checkbox" name = "Food[]" value = "Chai Crème Frappuccino®" > Chai Crème Frappuccino®
   </label>
   
     <p class = "number2" >  A creamy blend of spicy Teavana® chai, milk and ice. Topped with sweetened whipped cream and a dash of cinnamon. </p>
   
+  <details>
+<summary> Nutrient Fact </summary>
+<table>
   <table>
     <tr><td>Fat Calories:</td><td>40</td></tr>
     <tr><td>Total Fat:</td><td>4 g</td></tr>
@@ -131,17 +160,22 @@
     <tr><td>Calcium:</td><td>150 mg</td></tr>
     <tr><td>Iron:</td><td>0 g</td></tr>
   </table>
+  </details>
 
   <br>
 
   <h4> Bakery: </h4>
 
   <label>
-    <input type="checkbox" > Butter Croissant
+    <input type="checkbox" name = "Food[]" value = "Butter Croissant"	> Butter Croissant
   </label>
  
   
   <p class = "number2" >  Classic butter croissant with soft, flaky layers and a golden-brown crust. -VEGETARIAN </p>
+  
+  <details>
+<summary> Nutrient Fact </summary>
+<table>
    <table> 
     <tr><td>Fat Calories:</td><td>(value missing)</td></tr>
     <tr><td>Total Fat:</td><td>14 g</td></tr>
@@ -159,11 +193,11 @@
     <tr><td>Calcium:</td><td>0 g</td></tr>
     <tr><td>Iron:</td><td>1.8 g</td></tr>
   </table>
+  </details>
 
 
-  
-  <input type="Submit">
-  <input type="Reset">
+  <button type= "submit">Submit  </button>
+ <button type= "Reset"> Reset </button>
   
   
   <br>
@@ -184,18 +218,8 @@ to go back another menu page on Campus </p>
   
   
   
-  
+ 
 </div> 
-
-
-
-
-
-
-
-
-
-
-
+</form>
 </body>
 </html>

@@ -1,46 +1,160 @@
-body {
-	background-color: gold;
+body{
+ font-family: Times New Roman;
+ background-image: linear-gradient(to right, black, white, red, blue); 
+ padding: 20px;
 } 
 
 h1 {
-	text-align: center;
-	color: navy; 
+	text-align: center; 
+	 background-image: linear-gradient(to right, orange, pink ,orange, pink); 
+	 color: navy;
+     padding: 20px;
+     border:  solid;  
+     background-color: gold; 
+	 border-radius: 25px;
+	 padding: 20px;
+	 font-weight: bold; 
 } 
 
-p {
-	color: blue; 
-	font-weight: bold; 
-	font-size: 20px; 
-} 
 
-ul li{
+
+
+label{
 	
-	color: red;
-	font-weight: bold;
+	display: block;
+ 	margin-top: 20px;
+    font-weight: bold;
+	color: orange;
+	font-size: 25px;
+	
+}
+
+input[type="checkbox"] {
+  transform: scale(1.8);
+  margin-right: 15px;
+  margin-bottom: 15px; 
+  margin-left: 15px; 
+}
+
+
+
+.number1{
+	padding: 25px;
+	border-radius:50px;
+	margin: auto;
+	max-width: 950px;
+	background-color: black;
+	 box-shadow: 0 0 40px 10px pink;
+}
+	
+
+.number2, .number3 {
+	font-size: 25px;
+	font-weight: bold; 
+	color: green;
+	margin: 15px 5px;
+	font-style:Times New Roman;
+	margin: 5px 15px;
+} 
+.number4{
+	
+	color: pink;
+	font-weight: bold; 
+}
+.number5{
+	
+	color: green;
+	font-weight: bold; 
+}
+
+details {
+  margin-left: 25px;
+  margin-bottom: 15px;
+  background-color: navy;
+  padding: 10px;
+  border-left: 4px;
+  border-radius: 25px;
+}
+
+
+
+
+
+summary {
+	
+	color: gold;
+	font-weight: bold; 
+	cursor: pointer;
+	font-size: 15px;
 } 
 
- 
-table, td, th{
-	 border: 3px solid black;
-	 background: white; 
+
+	
+	
+table {
+  width:100%;
+  margin-top: 25px;
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+td {
+  padding: 15px;
+ border-bottom: double;
+}
+
+
+
+
+
+button{
+	 background-color: white;
+	 font-weight: bold; 
+	 border-radius:50px;
+	 padding: 15px ;
+	 margin-left: 20px;
+	 margin-top: 20px; 
+	 border-color: blue;
 } 
+ 
+
+button:hover {
+ background-color: #e6be00
+ }
+
+
 
 ul {
-  list-style-type: none;
-} 
-
-
-a:hover {
-  color: hotpink;
-
-  
+  margin-top: 30px;
 }
 
-input {
-	color: purple;
-	font-weight: bold; 
+ul li a {
+  color: #ffc107;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px; 
 }
 
-.number3{
-	color: navy;
-} 
+ul li a:hover {
+  text-decoration: underline;
+}
+
+
+img {
+  border-radius: 8px;
+}
+
+
+.animated-Sushi {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}

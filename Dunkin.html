@@ -2,269 +2,277 @@
 <html lang="en">
 
 <head>
-
 <title> Dietary & Allergen Filters </title> 
-
 <meta charset = "utf-8" >
 <link rel="stylesheet" href="Donut.css">
-
 </head>
-
 
 <body>
 
 <div class = "number1" > 
-<img class src = "Donut.jpg" alt = "food"  width = "350" height = "360" >
 
 <h1> Dunkin Donut</h1>
+
+<img  src = "Donut.jpg" alt = "food" class = "animated-Donut"  width = "350" height = "360" >
+
+
+
+<form action = "Donut.php" method = "POST">
 
 <h4> Breakfast Sandwiches </h4>
 
 <label>
-  <input type="checkbox" /> Bacon, Egg & Cheese Croissant
+  <input type="checkbox"  name = "Food[]" value = "Bacon, Egg & Cheese Croissant" > Bacon, Egg & Cheese Croissant
 </label>
 
-<table>
-  <tr><td>Fat Calories:</td><td>300</td></tr>
-  <tr><td>Total Fat:</td><td>34 g</td></tr>
-  <tr><td>Saturated Fat:</td><td>14 g</td></tr>
-  <tr><td>Trans Fat:</td><td>0.5 g</td></tr>
-  <tr><td>Cholesterol:</td><td>205 mg</td></tr>
-  <tr><td>Sodium:</td><td>1050 mg</td></tr>
-  <tr><td>Potassium:</td><td>N/A</td></tr>
-  <tr><td>Total Carbohydrates:</td><td>41 g</td></tr>
-  <tr><td>Dietary Fiber:</td><td>2 g</td></tr>
-  <tr><td>Sugars:</td><td>6 g</td></tr>
-  <tr><td>Protein:</td><td>20 g</td></tr>
-  <tr><td>Vitamin A:</td><td>N/A</td></tr>
-  <tr><td>Vitamin C:</td><td>0 g</td></tr>
-  <tr><td>Calcium:</td><td>150 g</td></tr>
-  <tr><td>Iron:</td><td>2.7 g</td></tr>
-</table>
+<details>
+  <summary>Nutrient Fact</summary>
+  <table>
+    <tr><td>Fat Calories:</td><td>300</td></tr>
+    <tr><td>Total Fat:</td><td>34 g</td></tr>
+    <tr><td>Saturated Fat:</td><td>14 g</td></tr>
+    <tr><td>Trans Fat:</td><td>0.5 g</td></tr>
+    <tr><td>Cholesterol:</td><td>205 mg</td></tr>
+    <tr><td>Sodium:</td><td>1050 mg</td></tr>
+    <tr><td>Potassium:</td><td>N/A</td></tr>
+    <tr><td>Total Carbohydrates:</td><td>41 g</td></tr>
+    <tr><td>Dietary Fiber:</td><td>2 g</td></tr>
+    <tr><td>Sugars:</td><td>6 g</td></tr>
+    <tr><td>Protein:</td><td>20 g</td></tr>
+    <tr><td>Vitamin A:</td><td>N/A</td></tr>
+    <tr><td>Vitamin C:</td><td>0 g</td></tr>
+    <tr><td>Calcium:</td><td>150 g</td></tr>
+    <tr><td>Iron:</td><td>2.7 g</td></tr>
+  </table>
+</details>
 
 <br>
 
 <label>
-  <input type="checkbox" /> Ham, Egg & Cheese Biscuit
+  <input type="checkbox"  name = "Food[]" value = "Ham, Egg & Cheese Biscuit" > Ham, Egg & Cheese Biscuit
 </label>
 
-<table>
-  <tr><td>Fat Calories:</td><td>250</td></tr>
-  <tr><td>Total Fat:</td><td>28 g</td></tr>
-  <tr><td>Saturated Fat:</td><td>14 g</td></tr>
-  <tr><td>Trans Fat:</td><td>0.5 g</td></tr>
-  <tr><td>Cholesterol:</td><td>215 mg</td></tr>
-  <tr><td>Sodium:</td><td>1380 mg</td></tr>
-  <tr><td>Potassium:</td><td>N/A</td></tr>
-  <tr><td>Total Carbohydrates:</td><td>36 g</td></tr>
-  <tr><td>Dietary Fiber:</td><td>1 g</td></tr>
-  <tr><td>Sugars:</td><td>4 g</td></tr>
-  <tr><td>Protein:</td><td>18 g</td></tr>
-  <tr><td>Vitamin A:</td><td>N/A</td></tr>
-  <tr><td>Vitamin C:</td><td>0 g</td></tr>
-  <tr><td>Calcium:</td><td>200 g</td></tr>
-  <tr><td>Iron:</td><td>3.6 g</td></tr>
-</table>
+<details>
+  <summary>Nutrient Fact</summary>
+  <table>
+    <tr><td>Fat Calories:</td><td>250</td></tr>
+    <tr><td>Total Fat:</td><td>28 g</td></tr>
+    <tr><td>Saturated Fat:</td><td>14 g</td></tr>
+    <tr><td>Trans Fat:</td><td>0.5 g</td></tr>
+    <tr><td>Cholesterol:</td><td>215 mg</td></tr>
+    <tr><td>Sodium:</td><td>1380 mg</td></tr>
+    <tr><td>Potassium:</td><td>N/A</td></tr>
+    <tr><td>Total Carbohydrates:</td><td>36 g</td></tr>
+    <tr><td>Dietary Fiber:</td><td>1 g</td></tr>
+    <tr><td>Sugars:</td><td>4 g</td></tr>
+    <tr><td>Protein:</td><td>18 g</td></tr>
+    <tr><td>Vitamin A:</td><td>N/A</td></tr>
+    <tr><td>Vitamin C:</td><td>0 g</td></tr>
+    <tr><td>Calcium:</td><td>200 g</td></tr>
+    <tr><td>Iron:</td><td>3.6 g</td></tr>
+  </table>
+</details>
 
 <br>
 
 <label>
-  <input type="checkbox" /> Sausage Biscuit
+  <input type="checkbox" name = "Food[]" value = "Sausage Biscuit"  > Sausage Biscuit
 </label>
 
-<table>
-  <tr><td>Fat Calories:</td><td>300</td></tr>
-  <tr><td>Total Fat:</td><td>33 g</td></tr>
-  <tr><td>Saturated Fat:</td><td>16 g</td></tr>
-  <tr><td>Trans Fat:</td><td>0 g</td></tr>
-  <tr><td>Cholesterol:</td><td>45 mg</td></tr>
-  <tr><td>Sodium:</td><td>1140 mg</td></tr>
-  <tr><td>Potassium:</td><td>N/A</td></tr>
-  <tr><td>Total Carbohydrates:</td><td>33 g</td></tr>
-  <tr><td>Dietary Fiber:</td><td>1 g</td></tr>
-  <tr><td>Sugars:</td><td>2 g</td></tr>
-  <tr><td>Protein:</td><td>13 g</td></tr>
-  <tr><td>Vitamin A:</td><td>N/A</td></tr>
-  <tr><td>Vitamin C:</td><td>0 g</td></tr>
-  <tr><td>Calcium:</td><td>60 g</td></tr>
-  <tr><td>Iron:</td><td>3.6 g</td></tr>
-</table>
+<details>
+  <summary>Nutrient Fact</summary>
+  <table>
+    <tr><td>Fat Calories:</td><td>300</td></tr>
+    <tr><td>Total Fat:</td><td>33 g</td></tr>
+    <tr><td>Saturated Fat:</td><td>16 g</td></tr>
+    <tr><td>Trans Fat:</td><td>0 g</td></tr>
+    <tr><td>Cholesterol:</td><td>45 mg</td></tr>
+    <tr><td>Sodium:</td><td>1140 mg</td></tr>
+    <tr><td>Potassium:</td><td>N/A</td></tr>
+    <tr><td>Total Carbohydrates:</td><td>33 g</td></tr>
+    <tr><td>Dietary Fiber:</td><td>1 g</td></tr>
+    <tr><td>Sugars:</td><td>2 g</td></tr>
+    <tr><td>Protein:</td><td>13 g</td></tr>
+    <tr><td>Vitamin A:</td><td>N/A</td></tr>
+    <tr><td>Vitamin C:</td><td>0 g</td></tr>
+    <tr><td>Calcium:</td><td>60 g</td></tr>
+    <tr><td>Iron:</td><td>3.6 g</td></tr>
+  </table>
+</details>
 
 <br>
 
 <label>
-  <input type="checkbox" /> Sausage, Egg & Cheese English Muffin
+  <input type="checkbox" name = "Food[]" value = "Sausage, Egg & Cheese English Muffin" > Sausage, Egg & Cheese English Muffin
 </label>
 
-<table>
-  <tr><td>Fat Calories:</td><td>310</td></tr>
-  <tr><td>Total Fat:</td><td>34 g</td></tr>
-  <tr><td>Saturated Fat:</td><td>13 g</td></tr>
-  <tr><td>Trans Fat:</td><td>0 g</td></tr>
-  <tr><td>Cholesterol:</td><td>245 mg</td></tr>
-  <tr><td>Sodium:</td><td>1340 mg</td></tr>
-  <tr><td>Potassium:</td><td>N/A</td></tr>
-  <tr><td>Total Carbohydrates:</td><td>34 g</td></tr>
-  <tr><td>Dietary Fiber:</td><td>1 g</td></tr>
-  <tr><td>Sugars:</td><td>3 g</td></tr>
-  <tr><td>Protein:</td><td>23 g</td></tr>
-  <tr><td>Vitamin A:</td><td>N/A</td></tr>
-  <tr><td>Vitamin C:</td><td>0 g</td></tr>
-  <tr><td>Calcium:</td><td>200 g</td></tr>
-  <tr><td>Iron:</td><td>3.6 g</td></tr>
-</table>
+<details>
+  <summary>Nutrient Fact</summary>
+  <table>
+    <tr><td>Fat Calories:</td><td>310</td></tr>
+    <tr><td>Total Fat:</td><td>34 g</td></tr>
+    <tr><td>Saturated Fat:</td><td>13 g</td></tr>
+    <tr><td>Trans Fat:</td><td>0 g</td></tr>
+    <tr><td>Cholesterol:</td><td>245 mg</td></tr>
+    <tr><td>Sodium:</td><td>1340 mg</td></tr>
+    <tr><td>Potassium:</td><td>N/A</td></tr>
+    <tr><td>Total Carbohydrates:</td><td>34 g</td></tr>
+    <tr><td>Dietary Fiber:</td><td>1 g</td></tr>
+    <tr><td>Sugars:</td><td>3 g</td></tr>
+    <tr><td>Protein:</td><td>23 g</td></tr>
+    <tr><td>Vitamin A:</td><td>N/A</td></tr>
+    <tr><td>Vitamin C:</td><td>0 g</td></tr>
+    <tr><td>Calcium:</td><td>200 g</td></tr>
+    <tr><td>Iron:</td><td>3.6 g</td></tr>
+  </table>
+</details>
 
 <br>
 
 <label>
-  <input type="checkbox" /> Bacon, Egg & Cheese Biscuit
+  <input type="checkbox"  name = "Food[]" value = "Bacon, Egg & Cheese Biscuit"  > Bacon, Egg & Cheese Biscuit
 </label>
 
-<table>
-  <tr><td>Fat Calories:</td><td>270</td></tr>
-  <tr><td>Total Fat:</td><td>30 g</td></tr>
-  <tr><td>Saturated Fat:</td><td>14 g</td></tr>
-  <tr><td>Trans Fat:</td><td>0.5 g</td></tr>
-  <tr><td>Cholesterol:</td><td>205 mg</td></tr>
-  <tr><td>Sodium:</td><td>1300 mg</td></tr>
-  <tr><td>Potassium:</td><td>N/A</td></tr>
-  <tr><td>Total Carbohydrates:</td><td>35 g</td></tr>
-  <tr><td>Dietary Fiber:</td><td>1 g</td></tr>
-  <tr><td>Sugars:</td><td>4 g</td></tr>
-  <tr><td>Protein:</td><td>18 g</td></tr>
-  <tr><td>Vitamin A:</td><td>N/A</td></tr>
-  <tr><td>Vitamin C:</td><td>0 g</td></tr>
-  <tr><td>Calcium:</td><td>200 g</td></tr>
-  <tr><td>Iron:</td><td>3.6 g</td></tr>
-</table>
+<details>
+  <summary>Nutrient Fact</summary>
+  <table>
+    <tr><td>Fat Calories:</td><td>270</td></tr>
+    <tr><td>Total Fat:</td><td>30 g</td></tr>
+    <tr><td>Saturated Fat:</td><td>14 g</td></tr>
+    <tr><td>Trans Fat:</td><td>0.5 g</td></tr>
+    <tr><td>Cholesterol:</td><td>205 mg</td></tr>
+    <tr><td>Sodium:</td><td>1300 mg</td></tr>
+    <tr><td>Potassium:</td><td>N/A</td></tr>
+    <tr><td>Total Carbohydrates:</td><td>35 g</td></tr>
+    <tr><td>Dietary Fiber:</td><td>1 g</td></tr>
+    <tr><td>Sugars:</td><td>4 g</td></tr>
+    <tr><td>Protein:</td><td>18 g</td></tr>
+    <tr><td>Vitamin A:</td><td>N/A</td></tr>
+    <tr><td>Vitamin C:</td><td>0 g</td></tr>
+    <tr><td>Calcium:</td><td>200 g</td></tr>
+    <tr><td>Iron:</td><td>3.6 g</td></tr>
+  </table>
+</details>
 
 <br>
 
 <h4> Donut </h4>
 
 <label>
-  <input type="checkbox" /> Apple n Spice
+  <input type="checkbox"  name = "Food[]" value = "Apple n Spice" > Apple n Spice
 </label>
 
-<table>
-  <tr><td>Fat Calories:</td><td>130</td></tr>
-  <tr><td>Total Fat:</td><td>14 g</td></tr>
-  <tr><td>Saturated Fat:</td><td>6 g</td></tr>
-  <tr><td>Trans Fat:</td><td>0 g</td></tr>
-  <tr><td>Cholesterol:</td><td>0 mg</td></tr>
-  <tr><td>Sodium:</td><td>350 mg</td></tr>
-  <tr><td>Potassium:</td><td>N/A</td></tr>
-  <tr><td>Total Carbohydrates:</td><td>32 g</td></tr>
-  <tr><td>Dietary Fiber:</td><td>1 g</td></tr>
-  <tr><td>Sugars:</td><td>8 g</td></tr>
-  <tr><td>Protein:</td><td>3 g</td></tr>
-  <tr><td>Vitamin A:</td><td>N/A</td></tr>
-  <tr><td>Vitamin C:</td><td>0 g</td></tr>
-  <tr><td>Calcium:</td><td>20 g</td></tr>
-  <tr><td>Iron:</td><td>1.08 g</td></tr>
-</table>
+<details>
+  <summary>Nutrient Fact</summary>
+  <table>
+    <tr><td>Fat Calories:</td><td>130</td></tr>
+    <tr><td>Total Fat:</td><td>14 g</td></tr>
+    <tr><td>Saturated Fat:</td><td>6 g</td></tr>
+    <tr><td>Trans Fat:</td><td>0 g</td></tr>
+    <tr><td>Cholesterol:</td><td>0 mg</td></tr>
+    <tr><td>Sodium:</td><td>350 mg</td></tr>
+    <tr><td>Potassium:</td><td>N/A</td></tr>
+    <tr><td>Total Carbohydrates:</td><td>32 g</td></tr>
+    <tr><td>Dietary Fiber:</td><td>1 g</td></tr>
+    <tr><td>Sugars:</td><td>8 g</td></tr>
+    <tr><td>Protein:</td><td>3 g</td></tr>
+    <tr><td>Vitamin A:</td><td>N/A</td></tr>
+    <tr><td>Vitamin C:</td><td>0 g</td></tr>
+    <tr><td>Calcium:</td><td>20 g</td></tr>
+    <tr><td>Iron:</td><td>1.08 g</td></tr>
+  </table>
+</details>
 
 <br>
 
 <label>
-  <input type="checkbox" /> Boston Kreme
+  <input type="checkbox" name = "Food[]" value = "Boston Kreme" > Boston Kreme
 </label>
 
-<table>
-  <tr><td>Fat Calories:</td><td>140</td></tr>
-  <tr><td>Total Fat:</td><td>16 g</td></tr>
-  <tr><td>Saturated Fat:</td><td>7 g</td></tr>
-  <tr><td>Trans Fat:</td><td>0 g</td></tr>
-  <tr><td>Cholesterol:</td><td>0 mg</td></tr>
-  <tr><td>Sodium:</td><td>370 mg</td></tr>
-  <tr><td>Potassium:</td><td>N/A</td></tr>
-  <tr><td>Total Carbohydrates:</td><td>39 g</td></tr>
-  <tr><td>Dietary Fiber:</td><td>1 g</td></tr>
-  <tr><td>Sugars:</td><td>16 g</td></tr>
-  <tr><td>Protein:</td><td>3 g</td></tr>
-  <tr><td>Vitamin A:</td><td>N/A</td></tr>
-  <tr><td>Vitamin C:</td><td>0 g</td></tr>
-  <tr><td>Calcium:</td><td>0 g</td></tr>
-  <tr><td>Iron:</td><td>1.44 g</td></tr>
-</table>
+<details>
+  <summary>Nutrient Fact</summary>
+  <table>
+    <tr><td>Fat Calories:</td><td>140</td></tr>
+    <tr><td>Total Fat:</td><td>16 g</td></tr>
+    <tr><td>Saturated Fat:</td><td>7 g</td></tr>
+    <tr><td>Trans Fat:</td><td>0 g</td></tr>
+    <tr><td>Cholesterol:</td><td>0 mg</td></tr>
+    <tr><td>Sodium:</td><td>370 mg</td></tr>
+    <tr><td>Potassium:</td><td>N/A</td></tr>
+    <tr><td>Total Carbohydrates:</td><td>39 g</td></tr>
+    <tr><td>Dietary Fiber:</td><td>1 g</td></tr>
+    <tr><td>Sugars:</td><td>16 g</td></tr>
+    <tr><td>Protein:</td><td>3 g</td></tr>
+    <tr><td>Vitamin A:</td><td>N/A</td></tr>
+    <tr><td>Vitamin C:</td><td>0 g</td></tr>
+    <tr><td>Calcium:</td><td>0 g</td></tr>
+    <tr><td>Iron:</td><td>1.44 g</td></tr>
+  </table>
+</details>
 
 <br>
 
 <label>
-  <input type="checkbox" /> Caramel Chocolate
+  <input type="checkbox"  name = "Food[]" value = " Boston Kreme" > Caramel Chocolate
 </label>
 
-<table>
-  <tr><td>Fat Calories:</td><td>160</td></tr>
-  <tr><td>Total Fat:</td><td>17 g</td></tr>
-  <tr><td>Saturated Fat:</td><td>8 g</td></tr>
-  <tr><td>Trans Fat:</td><td>0 g</td></tr>
-  <tr><td>Cholesterol:</td><td>0 mg</td></tr>
-  <tr><td>Sodium:</td><td>370 mg</td></tr>
-  <tr><td>Potassium:</td><td>N/A</td></tr>
-  <tr><td>Total Carbohydrates:</td><td>44 g</td></tr>
-  <tr><td>Dietary Fiber:</td><td>1 g</td></tr>
-  <tr><td>Sugars:</td><td>25 g</td></tr>
-  <tr><td>Protein:</td><td>4 g</td></tr>
-  <tr><td>Vitamin A:</td><td>N/A</td></tr>
-  <tr><td>Vitamin C:</td><td>0 g</td></tr>
-  <tr><td>Calcium:</td><td>20 g</td></tr>
-  <tr><td>Iron:</td><td>1.44 g</td></tr>
-</table>
+<details>
+  <summary>Nutrient Fact</summary>
+  <table>
+    <tr><td>Fat Calories:</td><td>160</td></tr>
+    <tr><td>Total Fat:</td><td>17 g</td></tr>
+    <tr><td>Saturated Fat:</td><td>8 g</td></tr>
+    <tr><td>Trans Fat:</td><td>0 g</td></tr>
+    <tr><td>Cholesterol:</td><td>0 mg</td></tr>
+    <tr><td>Sodium:</td><td>370 mg</td></tr>
+    <tr><td>Potassium:</td><td>N/A</td></tr>
+    <tr><td>Total Carbohydrates:</td><td>44 g</td></tr>
+    <tr><td>Dietary Fiber:</td><td>1 g</td></tr>
+    <tr><td>Sugars:</td><td>25 g</td></tr>
+    <tr><td>Protein:</td><td>4 g</td></tr>
+    <tr><td>Vitamin A:</td><td>N/A</td></tr>
+    <tr><td>Vitamin C:</td><td>0 g</td></tr>
+    <tr><td>Calcium:</td><td>20 g</td></tr>
+    <tr><td>Iron:</td><td>1.44 g</td></tr>
+  </table>
+</details>
 
 <br>
 
 <label>
-  <input type="checkbox" /> Chocolate Frosted Coffee Roll
+  <input type="checkbox" name = "Food[]" value = "Chocolate Frosted Coffee Roll" > Chocolate Frosted Coffee Roll
 </label>
 
-<table>
-  <tr><td>Fat Calories:</td><td>170</td></tr>
-  <tr><td>Total Fat:</td><td>19 g</td></tr>
-  <tr><td>Saturated Fat:</td><td>8 g</td></tr>
-  <tr><td>Trans Fat:</td><td>0 g</td></tr>
-  <tr><td>Cholesterol:</td><td>0 mg</td></tr>
-  <tr><td>Sodium:</td><td>420 mg</td></tr>
-  <tr><td>Potassium:</td><td>N/A</td></tr>
-  <tr><td>Total Carbohydrates:</td><td>53 g</td></tr>
-  <tr><td>Dietary Fiber:</td><td>3 g</td></tr>
-  <tr><td>Sugars:</td><td>19 g</td></tr>
-  <tr><td>Protein:</td><td>7 g</td></tr>
-  <tr><td>Vitamin A:</td><td>N/A</td></tr>
-  <tr><td>Vitamin C:</td><td>0 g</td></tr>
-  <tr><td>Calcium:</td><td>40 g</td></tr>
-  <tr><td>Iron:</td><td>2.7 g</td></tr>
-</table>
+<details>
+  <summary>Nutrient Fact</summary>
+  <table>
+    <tr><td>Fat Calories:</td><td>170</td></tr>
+    <tr><td>Total Fat:</td><td>19 g</td></tr>
+    <tr><td>Saturated Fat:</td><td>8 g</td></tr>
+    <tr><td>Trans Fat:</td><td>0 g</td></tr>
+    <tr><td>Cholesterol:</td><td>0 mg</td></tr>
+    <tr><td>Sodium:</td><td>420 mg</td></tr>
+    <tr><td>Potassium:</td><td>N/A</td></tr>
+    <tr><td>Total Carbohydrates:</td><td>53 g</td></tr>
+    <tr><td>Dietary Fiber:</td><td>3 g</td></tr>
+    <tr><td>Sugars:</td><td>19 g</td></tr>
+    <tr><td>Protein:</td><td>7 g</td></tr>
+    <tr><td>Vitamin A:</td><td>N/A</td></tr>
+    <tr><td>Vitamin C:</td><td>0 g</td></tr>
+    <tr><td>Calcium:</td><td>40 g</td></tr>
+    <tr><td>Iron:</td><td>2.7 g</td></tr>
+  </table>
+</details>
+
+ <button type= "submit">Submit  </button>
+ <button type= "Reset"> Reset </button>
+ 
 
 <br>
-
-<label>
-  <input type="checkbox" /> Chocolate Heart
-</label>
-
-<table>
-  <tr><td>Fat Calories:</td><td>180</td></tr>
-  <tr><td>Total Fat:</td><td>21 g</td></tr>
-  <tr><td>Saturated Fat:</td><td>9 g</td></tr>
-  <tr><td>Trans Fat:</td><td>0 g</td></tr>
-  <tr><td>Cholesterol:</td><td>0 mg</td></tr>
-  <tr><td>Sodium:</td><td>280 mg</td></tr>
-  <tr><td>Potassium:</td><td>N/A</td></tr>
-  <tr><td>Total Carbohydrates:</td><td>50 g</td></tr>
-  <tr><td>Dietary Fiber:</td><td>1 g</td></tr>
-  <tr><td>Sugars:</td><td>29 g</td></tr>
-  <tr><td>Protein:</td><td>4 g</td></tr>
-  <tr><td>Vitamin A:</td><td>N/A</td></tr>
-  <tr><td>Vitamin C:</td><td>0 g</td></tr>
-  <tr><td>Calcium:</td><td>20 g</td></tr>
-  <tr><td>Iron:</td><td>1.8 g</td></tr>
-</table>
-
-
 
 
 <p class = "number3" > Please click on the following links
-to go back another menu page on Campus </p>
+to go back another menu page on Campus: </p>
 
 
 <ul > 
@@ -283,5 +291,6 @@ to go back another menu page on Campus </p>
 
 
 </div>
+</form>
 </body>
 </html>

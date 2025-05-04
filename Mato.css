@@ -1,56 +1,187 @@
-body {
-	
-	background-color: gold;
+body{
+ font-family: Times New Roman;
+ background-image: linear-gradient(to right, black ,gold, black); 
+ padding: 20px;
 } 
 
 h1 {
-	text-align: center;
-	color: navy; 
+	text-align: center; 
+	 background-image: linear-gradient(to right, red,  white ,red, white); 
+	 color: navy;
+     padding: 20px;
+     border:  solid;  
+     background-color: gold; 
+	 border-radius: 25px;
+	 padding: 20px;
+	 font-weight: bold; 
+	 
 } 
+h4{ 
 
-h4{
+color: red;
+font-size: 30px;
+font-weight: bold;
+} 
+p {
 	
-	font-size: 20px;
-	color: red; 
+	color: red;
 	font-weight: bold; 
-
+	font-size: 20px; 
 } 
 
-label {
-  font-weight: bold;
-  font-size: 20px; 
- 
+
+
+.number4 {
+	
+	color: purple;
+	font-weight: bold; 
 }
 
- table, th, td {
-	 
-	 border: 3px solid black;
-	 background-color: white; 
- } 
- 
- 
- table, td, th{
-	 border: 3px solid black;
-	 background: white; 
+
+label{
+	
+	display: block;
+ 	margin-top: 20px;
+	margin-bottom: 20px;
+    font-weight: bold;
+	color: pink;
+	font-size: 20px;
+   	
+}
+
+input[type="checkbox"] {
+  transform: scale(1.5);
+  margin-right: 15px;
+}
+
+
+.number1{
+	padding: 25px;
+	border-radius:50px;
+	margin: auto;
+	max-width: 650px;
+	background-color: black;
+	 box-shadow: 0 0 40px 10px red;
+}
+	
+
+.number2 {
+	font-size: 25px;
+	font-weight: bold; 
+	color: #0000cc;
+	margin: 15px 5px;
+	font-style:Times New Roman;
+	margin: 5px 15px;
 } 
 
-ul {
-  list-style-type: none;
-} 
 
-
-a:hover {
-  color: hotpink;
-
+.number3 {
+	
+	font-style: Times New Roman;
+	font-weight: bold;	
+	color: #cc00cc; 
+	font-size: 25px;
+}
+	
+.number5{
+		font-size: 15px;
+		color: green; 
+} 		
+details {
+  margin-left: 25px;
+  margin-bottom: 15px;
+  background-color: navy;
+  padding: 10px;
+  border-left: 5px;
+  border-radius: 25px;
   
 }
 
-input {
-	color: purple;
+
+
+
+
+summary {
+	
+	color: red;
 	font-weight: bold; 
+	cursor: pointer;
+	font-size: 15px;
+} 
+
+
+	
+	
+table {
+  width:100%;
+  margin-top: 25px;
+  color: white;
+  font-weight: bold;
+  font-size: 15.5px;
+}
+
+td {
+  padding: 15px;
+ border-bottom: double;
 }
 
 
-.number2 {
-	color: purple;
-	font-weight: bold; 
+
+
+
+button{
+	 background-color: white;
+	 font-weight: bold; 
+	 border-radius:50px;
+	 padding: 15px ;
+	 margin-left: 20px;
+	 margin-top: 20px; 
+	 border-color: blue;
+} 
+ 
+
+button:hover {
+ background-color: #e6be00
+ }
+
+
+
+
+
+
+
+
+ul {
+  margin-top: 30px;
+}
+
+ul li a {
+  color: #ffc107;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px; 
+}
+
+ul li a:hover {
+  text-decoration: underline;
+}
+
+
+img {
+  border-radius: 8px;
+}
+
+
+.animated-pizza {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
