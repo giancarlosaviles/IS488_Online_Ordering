@@ -1,54 +1,39 @@
 <?php
-// === 1. Database connection parameters ===
-$servername = "studentdb-maria.gl.umbc.edu";           // Change if using remote host
-$username = "mvijay1";         // Replace with your DB username
-$password = "mvijay1";         // Replace with your DB password
-$dbname = "mvijay1";      // Replace with your DB name
+$servername = "studentdb-maria.gl.umbc.edu";
+$username = "mvijay1";
+$password = "mvijay1";
+$dbname = "mvijay1";
 
-// === 2. Create MySQL connection ===
 $conn = new mysqli($servername, $username, $password, $dbname);
-
-// === 3. Check the connection ===
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-// === 4. Create reviews table if it doesn't exist ===
 $create_table_sql = "
 CREATE TABLE IF NOT EXISTS reviews (
     review_id INT AUTO_INCREMENT PRIMARY KEY,
     customer_name VARCHAR(100),
-    campus_id VARCHAR(20),
-    food_item VARCHAR(100) NOT NULL,
+    campus_id VARCHAR(100),
+    food_item VARCHAR(100),
     rating INT CHECK (rating BETWEEN 1 AND 5),
     comment TEXT,
     review_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )";
+$conn->query($create_table_sql);
 
-if ($conn->query($create_table_sql) === FALSE) {
-    die("Error creating table: " . $conn->error);
-}
+$customer_name = $_POST['name'] ?? '';
+$campus_id = $_POST['restaurant'] ?? '';
+$food_item = '';
+$rating = (int)($_POST['stars'] ?? 0);
+$comment = $_POST['review'] ?? '';
 
-// === 5. Retrieve form data securely ===
-$customer_name = $_POST['customer_name'] ?? '';
-$campus_id = $_POST['campus_id'] ?? '';
-$food_item = $_POST['food_item'] ?? '';
-$rating = (int)($_POST['rating'] ?? 0);
-$comment = $_POST['comment'] ?? '';
-
-// === 6. Insert data into reviews table ===
-$insert_sql = "INSERT INTO reviews (customer_name, campus_id, food_item, rating, comment) 
-               VALUES (?, ?, ?, ?, ?)";
-$stmt = $conn->prepare($insert_sql);
+$stmt = $conn->prepare("INSERT INTO reviews (customer_name, campus_id, food_item, rating, comment) VALUES (?, ?, ?, ?, ?)");
 $stmt->bind_param("sssis", $customer_name, $campus_id, $food_item, $rating, $comment);
+$stmt->execute();
 
-if ($stmt->execute()) {
-    echo "✅ Review submitted and saved!";
-} else {
-    echo "❌ Error submitting review: " . $stmt->error;
-}
-
-// === 7. Close everything ===
 $stmt->close();
 $conn->close();
+
+header("Location: goodbye.html");
+exit();
 ?>
