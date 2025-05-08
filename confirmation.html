@@ -4,63 +4,15 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Order Confirmation</title>
-  <style>
-    body {
-      background-color: #fff8dc;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .confirmation-box {
-      background: #ffffff;
-      padding: 30px;
-      border-radius: 10px;
-      max-width: 500px;
-      width: 90%;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-
-    h1 {
-      color: #ff9900;
-    }
-
-    .info {
-      margin-top: 20px;
-      text-align: left;
-    }
-
-    .info p {
-      margin: 8px 0;
-      font-size: 1.1em;
-    }
-
-    .store-id {
-      background-color: #ffcc00;
-      padding: 8px;
-      border-radius: 6px;
-      margin-top: 20px;
-      font-weight: bold;
-    }
-
-    .highlight {
-      color: #000;
-      font-weight: bold;
-    }
-  </style>
+  <link rel="stylesheet" href="confirmation.css" />
 </head>
 <body>
   <div class="confirmation-box">
     <h1>🎉 One step closer to your tastebuds!</h1>
-    <p>Your order will be ready in <span class="highlight" id="wait-time">10–15</span> minutes.</p>
+    <p>Your order will be ready in <span class="highlight">10–15</span> minutes.</p>
 
     <div class="info">
-      <p>Order for: <span class="highlight" id="cust-name">Retriever</span></p>
+      <p>Order for: <span class="highlight">Retriever</span></p>
       <p>Items:</p>
       <ul>
         <li>Spicy Chicken Sandwich × 1</li>
@@ -73,12 +25,5 @@
       Store #: 118 - Chick-fil-A @ The Commons
     </div>
   </div>
-
-  <script>
-    // Optional dynamic logic
-    const waitMin = Math.floor(Math.random() * 6) + 10;
-    const waitMax = waitMin + 5;
-    document.getElementById("wait-time").textContent = `${waitMin}–${waitMax}`;
-  </script>
 </body>
 </html>
