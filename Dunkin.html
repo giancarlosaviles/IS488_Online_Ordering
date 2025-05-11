@@ -5,26 +5,50 @@
 <title> Dietary & Allergen Filters </title> 
 <meta charset = "utf-8" >
 <link rel="stylesheet" href="Donut.css">
+<style>
+  .filterDiv { display: block; }
+  .btn { margin-right: 10px; margin-top: 10px; }
+</style>
+<script>
+  function filterSelection(category) {
+    const items = document.getElementsByClassName("filterDiv");
+    for (let i = 0; i < items.length; i++) {
+      if (category === "all" || items[i].classList.contains(category)) {
+        items[i].style.display = "block";
+      } else {
+        items[i].style.display = "none";
+      }
+    }
+  }
+</script>
+
 </head>
 
 <body>
 
-<div class = "number1" > 
+<div class="number1"> 
 
 <h1> Dunkin Donut</h1>
 
 <img  src = "Donut.jpg" alt = "food" class = "animated-Donut"  width = "350" height = "360" >
 
-
+<!-- Filter buttons -->
+<div id="myBtnContainer">
+  <button class="btn" onclick="filterSelection('all')">Show all</button>
+  <button class="btn" onclick="filterSelection('breakfast')">Breakfast Sandwiches</button>
+  <button class="btn" onclick="filterSelection('donut')">Donut</button>
+</div>
 
 <form action = "Donut.php" method = "POST">
 
+
+<div class="filterDiv breakfast">
 <h4> Breakfast Sandwiches </h4>
+
 
 <label>
   <input type="checkbox"  name = "Food[]" value = "Bacon, Egg & Cheese Croissant" > Bacon, Egg & Cheese Croissant
 </label>
-
 <details>
   <summary>Nutrient Fact</summary>
   <table>
@@ -45,13 +69,12 @@
     <tr><td>Iron:</td><td>2.7 g</td></tr>
   </table>
 </details>
+</div>
 
-<br>
-
+<div class="filterDiv breakfast">
 <label>
   <input type="checkbox"  name = "Food[]" value = "Ham, Egg & Cheese Biscuit" > Ham, Egg & Cheese Biscuit
 </label>
-
 <details>
   <summary>Nutrient Fact</summary>
   <table>
@@ -72,9 +95,10 @@
     <tr><td>Iron:</td><td>3.6 g</td></tr>
   </table>
 </details>
+</div>
 
-<br>
 
+<div class="filterDiv breakfast">
 <label>
   <input type="checkbox" name = "Food[]" value = "Sausage Biscuit"  > Sausage Biscuit
 </label>
@@ -99,9 +123,12 @@
     <tr><td>Iron:</td><td>3.6 g</td></tr>
   </table>
 </details>
-
+</div>
 <br>
 
+
+
+<div class="filterDiv breakfast">
 <label>
   <input type="checkbox" name = "Food[]" value = "Sausage, Egg & Cheese English Muffin" > Sausage, Egg & Cheese English Muffin
 </label>
@@ -126,9 +153,12 @@
     <tr><td>Iron:</td><td>3.6 g</td></tr>
   </table>
 </details>
-
+</div>
 <br>
 
+
+
+<div class="filterDiv breakfast">
 <label>
   <input type="checkbox"  name = "Food[]" value = "Bacon, Egg & Cheese Biscuit"  > Bacon, Egg & Cheese Biscuit
 </label>
@@ -153,144 +183,149 @@
     <tr><td>Iron:</td><td>3.6 g</td></tr>
   </table>
 </details>
-
+</div>
 <br>
+
+
+
+
+
+
+
+
+
+
+
+<div class="filterDiv donut">
 
 <h4> Donut </h4>
 
-<label>
-  <input type="checkbox"  name = "Food[]" value = "Apple n Spice" > Apple n Spice
-</label>
 
-<details>
-  <summary>Nutrient Fact</summary>
-  <table>
-    <tr><td>Fat Calories:</td><td>130</td></tr>
-    <tr><td>Total Fat:</td><td>14 g</td></tr>
-    <tr><td>Saturated Fat:</td><td>6 g</td></tr>
-    <tr><td>Trans Fat:</td><td>0 g</td></tr>
-    <tr><td>Cholesterol:</td><td>0 mg</td></tr>
-    <tr><td>Sodium:</td><td>350 mg</td></tr>
-    <tr><td>Potassium:</td><td>N/A</td></tr>
-    <tr><td>Total Carbohydrates:</td><td>32 g</td></tr>
-    <tr><td>Dietary Fiber:</td><td>1 g</td></tr>
-    <tr><td>Sugars:</td><td>8 g</td></tr>
-    <tr><td>Protein:</td><td>3 g</td></tr>
-    <tr><td>Vitamin A:</td><td>N/A</td></tr>
-    <tr><td>Vitamin C:</td><td>0 g</td></tr>
-    <tr><td>Calcium:</td><td>20 g</td></tr>
-    <tr><td>Iron:</td><td>1.08 g</td></tr>
-  </table>
-</details>
+  <label>
+    <input type="checkbox" name = "Food[]" value = "Apple n Spice" > Apple n Spice
+  </label>
+  <details>
+    <summary>Nutrient Fact</summary>
+    <table>
+      <tr><td>Fat Calories:</td><td>130</td></tr>
+      <tr><td>Total Fat:</td><td>14 g</td></tr>
+      <tr><td>Saturated Fat:</td><td>6 g</td></tr>
+      <tr><td>Trans Fat:</td><td>0 g</td></tr>
+      <tr><td>Cholesterol:</td><td>0 mg</td></tr>
+      <tr><td>Sodium:</td><td>350 mg</td></tr>
+      <tr><td>Potassium:</td><td>N/A</td></tr>
+      <tr><td>Total Carbohydrates:</td><td>32 g</td></tr>
+      <tr><td>Dietary Fiber:</td><td>1 g</td></tr>
+      <tr><td>Sugars:</td><td>8 g</td></tr>
+      <tr><td>Protein:</td><td>3 g</td></tr>
+      <tr><td>Vitamin A:</td><td>N/A</td></tr>
+      <tr><td>Vitamin C:</td><td>0 g</td></tr>
+      <tr><td>Calcium:</td><td>20 g</td></tr>
+      <tr><td>Iron:</td><td>1.08 g</td></tr>
+    </table>
+  </details>
+</div>
+
+<div class="filterDiv donut">
+  <label>
+    <input type="checkbox" name = "Food[]" value = "Boston Kreme" > Boston Kreme
+  </label>
+  <details>
+    <summary>Nutrient Fact</summary>
+    <table>
+      <tr><td>Fat Calories:</td><td>140</td></tr>
+      <tr><td>Total Fat:</td><td>16 g</td></tr>
+      <tr><td>Saturated Fat:</td><td>7 g</td></tr>
+      <tr><td>Trans Fat:</td><td>0 g</td></tr>
+      <tr><td>Cholesterol:</td><td>0 mg</td></tr>
+      <tr><td>Sodium:</td><td>370 mg</td></tr>
+      <tr><td>Potassium:</td><td>N/A</td></tr>
+      <tr><td>Total Carbohydrates:</td><td>39 g</td></tr>
+      <tr><td>Dietary Fiber:</td><td>1 g</td></tr>
+      <tr><td>Sugars:</td><td>16 g</td></tr>
+      <tr><td>Protein:</td><td>3 g</td></tr>
+      <tr><td>Vitamin A:</td><td>N/A</td></tr>
+      <tr><td>Vitamin C:</td><td>0 g</td></tr>
+      <tr><td>Calcium:</td><td>0 g</td></tr>
+      <tr><td>Iron:</td><td>1.44 g</td></tr>
+    </table>
+  </details>
+</div>
+
+<div class="filterDiv donut">
+  <label>
+    <input type="checkbox" name = "Food[]" value = "Caramel Chocolate" > Caramel Chocolate
+  </label>
+  <details>
+    <summary>Nutrient Fact</summary>
+    <table>
+      <tr><td>Fat Calories:</td><td>160</td></tr>
+      <tr><td>Total Fat:</td><td>17 g</td></tr>
+      <tr><td>Saturated Fat:</td><td>8 g</td></tr>
+      <tr><td>Trans Fat:</td><td>0 g</td></tr>
+      <tr><td>Cholesterol:</td><td>0 mg</td></tr>
+      <tr><td>Sodium:</td><td>370 mg</td></tr>
+      <tr><td>Potassium:</td><td>N/A</td></tr>
+      <tr><td>Total Carbohydrates:</td><td>44 g</td></tr>
+      <tr><td>Dietary Fiber:</td><td>1 g</td></tr>
+      <tr><td>Sugars:</td><td>25 g</td></tr>
+      <tr><td>Protein:</td><td>4 g</td></tr>
+      <tr><td>Vitamin A:</td><td>N/A</td></tr>
+      <tr><td>Vitamin C:</td><td>0 g</td></tr>
+      <tr><td>Calcium:</td><td>20 g</td></tr>
+      <tr><td>Iron:</td><td>1.44 g</td></tr>
+    </table>
+  </details>
+</div>
+
+<div class="filterDiv donut">
+  <label>
+    <input type="checkbox" name = "Food[]" value = "Chocolate Frosted Coffee Roll" > Chocolate Frosted Coffee Roll
+  </label>
+  <details>
+    <summary>Nutrient Fact</summary>
+    <table>
+      <tr><td>Fat Calories:</td><td>170</td></tr>
+      <tr><td>Total Fat:</td><td>19 g</td></tr>
+      <tr><td>Saturated Fat:</td><td>8 g</td></tr>
+      <tr><td>Trans Fat:</td><td>0 g</td></tr>
+      <tr><td>Cholesterol:</td><td>0 mg</td></tr>
+      <tr><td>Sodium:</td><td>420 mg</td></tr>
+      <tr><td>Potassium:</td><td>N/A</td></tr>
+      <tr><td>Total Carbohydrates:</td><td>53 g</td></tr>
+      <tr><td>Dietary Fiber:</td><td>3 g</td></tr>
+      <tr><td>Sugars:</td><td>19 g</td></tr>
+      <tr><td>Protein:</td><td>7 g</td></tr>
+      <tr><td>Vitamin A:</td><td>N/A</td></tr>
+      <tr><td>Vitamin C:</td><td>0 g</td></tr>
+      <tr><td>Calcium:</td><td>40 g</td></tr>
+      <tr><td>Iron:</td><td>2.7 g</td></tr>
+    </table>
+  </details>
+</div>
+
+
+
+ <button type= "submit">Submit</button>
+ <button type= "Reset">Reset</button>
 
 <br>
 
-<label>
-  <input type="checkbox" name = "Food[]" value = "Boston Kreme" > Boston Kreme
-</label>
+<p class="number3">Please click on the following links to go back another menu page on Campus:</p>
 
-<details>
-  <summary>Nutrient Fact</summary>
-  <table>
-    <tr><td>Fat Calories:</td><td>140</td></tr>
-    <tr><td>Total Fat:</td><td>16 g</td></tr>
-    <tr><td>Saturated Fat:</td><td>7 g</td></tr>
-    <tr><td>Trans Fat:</td><td>0 g</td></tr>
-    <tr><td>Cholesterol:</td><td>0 mg</td></tr>
-    <tr><td>Sodium:</td><td>370 mg</td></tr>
-    <tr><td>Potassium:</td><td>N/A</td></tr>
-    <tr><td>Total Carbohydrates:</td><td>39 g</td></tr>
-    <tr><td>Dietary Fiber:</td><td>1 g</td></tr>
-    <tr><td>Sugars:</td><td>16 g</td></tr>
-    <tr><td>Protein:</td><td>3 g</td></tr>
-    <tr><td>Vitamin A:</td><td>N/A</td></tr>
-    <tr><td>Vitamin C:</td><td>0 g</td></tr>
-    <tr><td>Calcium:</td><td>0 g</td></tr>
-    <tr><td>Iron:</td><td>1.44 g</td></tr>
-  </table>
-</details>
-
-<br>
-
-<label>
-  <input type="checkbox"  name = "Food[]" value = " Boston Kreme" > Caramel Chocolate
-</label>
-
-<details>
-  <summary>Nutrient Fact</summary>
-  <table>
-    <tr><td>Fat Calories:</td><td>160</td></tr>
-    <tr><td>Total Fat:</td><td>17 g</td></tr>
-    <tr><td>Saturated Fat:</td><td>8 g</td></tr>
-    <tr><td>Trans Fat:</td><td>0 g</td></tr>
-    <tr><td>Cholesterol:</td><td>0 mg</td></tr>
-    <tr><td>Sodium:</td><td>370 mg</td></tr>
-    <tr><td>Potassium:</td><td>N/A</td></tr>
-    <tr><td>Total Carbohydrates:</td><td>44 g</td></tr>
-    <tr><td>Dietary Fiber:</td><td>1 g</td></tr>
-    <tr><td>Sugars:</td><td>25 g</td></tr>
-    <tr><td>Protein:</td><td>4 g</td></tr>
-    <tr><td>Vitamin A:</td><td>N/A</td></tr>
-    <tr><td>Vitamin C:</td><td>0 g</td></tr>
-    <tr><td>Calcium:</td><td>20 g</td></tr>
-    <tr><td>Iron:</td><td>1.44 g</td></tr>
-  </table>
-</details>
-
-<br>
-
-<label>
-  <input type="checkbox" name = "Food[]" value = "Chocolate Frosted Coffee Roll" > Chocolate Frosted Coffee Roll
-</label>
-
-<details>
-  <summary>Nutrient Fact</summary>
-  <table>
-    <tr><td>Fat Calories:</td><td>170</td></tr>
-    <tr><td>Total Fat:</td><td>19 g</td></tr>
-    <tr><td>Saturated Fat:</td><td>8 g</td></tr>
-    <tr><td>Trans Fat:</td><td>0 g</td></tr>
-    <tr><td>Cholesterol:</td><td>0 mg</td></tr>
-    <tr><td>Sodium:</td><td>420 mg</td></tr>
-    <tr><td>Potassium:</td><td>N/A</td></tr>
-    <tr><td>Total Carbohydrates:</td><td>53 g</td></tr>
-    <tr><td>Dietary Fiber:</td><td>3 g</td></tr>
-    <tr><td>Sugars:</td><td>19 g</td></tr>
-    <tr><td>Protein:</td><td>7 g</td></tr>
-    <tr><td>Vitamin A:</td><td>N/A</td></tr>
-    <tr><td>Vitamin C:</td><td>0 g</td></tr>
-    <tr><td>Calcium:</td><td>40 g</td></tr>
-    <tr><td>Iron:</td><td>2.7 g</td></tr>
-  </table>
-</details>
-
- <button type= "submit">Submit  </button>
- <button type= "Reset"> Reset </button>
- 
-
-<br>
-
-
-<p class = "number3" > Please click on the following links
-to go back another menu page on Campus: </p>
-
-
-<ul > 
-
-<li> <a href = "Menu.html" > Return back to the menu selection page </a> </li>
-<li> <a href = "Absurd Bird_Burgers.html" > Absurd Bird & Burgers </a> </li>
-<li> <a href = "Chick-fil-A.html" > Chick-fil-A </a> </li>
-<li> <a href = "Einstein.html" > Einstein Brother's Bagels </a> </li>
-<li> <a href = "Halal_Shack.html" > Halal Shack </a> </li>
-<li> <a href = "Mato.html" > 2.Mato </a> </li>
-<li> <a href = "Starbuck.html" > Starbuck </a> </li>
-<li> <a href = "Sushi.html" > Sushi Do </a> </li>
-
+<ul> 
+  <li><a href="Menu.html">Return back to the menu selection page</a></li>
+  <li><a href="Absurd Bird_Burgers.html">Absurd Bird & Burgers</a></li>
+  <li><a href="Chick-fil-A.html">Chick-fil-A</a></li>
+  <li><a href="Einstein.html">Einstein Brother's Bagels</a></li>
+  <li><a href="Halal_Shack.html">Halal Shack</a></li>
+  <li><a href="Mato.html">2.Mato</a></li>
+  <li><a href="Starbuck.html">Starbuck</a></li>
+  <li><a href="Sushi.html">Sushi Do</a></li>
 </ul>
 
-
-
-</div>
 </form>
+</div>
+
 </body>
 </html>

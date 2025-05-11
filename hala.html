@@ -8,6 +8,30 @@
 <meta charset = "utf-8" >
 <link rel="stylesheet" href="Hala.css">
 
+
+<style>
+  .filterDiv { display: block; }
+  .btn { margin-right: 10px; margin-top: 10px; }
+</style>
+<script>
+  function filterSelection(category) {
+    const items = document.getElementsByClassName("filterDiv");
+    for (let i = 0; i < items.length; i++) {
+      if (category === "all" || items[i].classList.contains(category)) {
+        items[i].style.display = "block";
+      } else {
+        items[i].style.display = "none";
+      }
+    }
+  }
+</script>
+
+
+
+
+
+
+
 </head>
 
 <body>
@@ -21,9 +45,17 @@
 here are the list of our menu we currently have! </p>
 
 
+<div id="myBtnContainer">
+  <button class="btn" onclick="filterSelection('all')">Show all</button>
+  <button class="btn" onclick="filterSelection('rice')">Rice Bowls</button>
+  <button class="btn" onclick="filterSelection('naan')">Naan Rolls</button>
+</div>
+
+
+
 <form action = "Hala.php"  method = "POST" >
 
-
+<div class="filterDiv rice">
 <h4> Rice Bowls </h4>
 
 <label>
@@ -55,7 +87,9 @@ here are the list of our menu we currently have! </p>
 </table>
 </details>
 <br>
+</div>
 
+<div class="filterDiv rice">
 <label>
   <input type="checkbox"  name = "Food[]" action = "Halal Rice Bowl with Beef" > Halal Rice Bowl with Beef
 </label>
@@ -85,7 +119,10 @@ here are the list of our menu we currently have! </p>
 </table>
 </details>
 <br>
+</div>
 
+
+<div class="filterDiv rice">
 <label>
   <input type="checkbox" name = "Food[]" method = "Halal Hummus Rice Bowl" > Halal Hummus Rice Bowl
 </label>
@@ -115,9 +152,12 @@ here are the list of our menu we currently have! </p>
   <tr><td>Iron:</td><td>g</td></tr>
 </table>
 </details>
-
+</div>
 <br>
 
+
+
+<div class="filterDiv rice">
 <label>
   <input type="checkbox" name = "Food[]" value = "Halal Rice Bowl with Falafel" > Halal Rice Bowl with Falafel
 </label>
@@ -146,8 +186,11 @@ here are the list of our menu we currently have! </p>
   <tr><td>Iron:</td><td>g</td></tr>
 </table>
 </details>
+</div>
 <br>
 
+
+<div class="filterDiv rice">
 <label>
   <input type="checkbox" name = "Food[]" value = "Halal Rice Bowl with Falafel"> Halal Beef & Chicken Rice Bowl
 </label>
@@ -178,8 +221,11 @@ here are the list of our menu we currently have! </p>
   <tr><td>Iron:</td><td>g</td></tr>
 </table>
 </details>
+</div>
 <br>
 
+
+<div class="filterDiv rice">
 <label>
   <input type="checkbox" name = "Food[]" value = "Naan with Rice Bowl" > Naan with Rice Bowl
 </label>
@@ -210,8 +256,15 @@ here are the list of our menu we currently have! </p>
   <tr><td>Iron:</td><td>g</td></tr>
 </table>
 </details>
+</div>
+
+
+
+
 <h4> Naan Roll </h4>
 
+
+   <div class="filterDiv naan">
 <label>
   <input type="checkbox" name = "Food[]" value = "Halal Chicken Naan Roll"  > Halal Chicken Naan Roll
 </label>
@@ -241,8 +294,11 @@ here are the list of our menu we currently have! </p>
   <tr><td>Iron:</td><td>g</td></tr>
 </table>
 </details>
+</div>
 <br>
 
+
+   <div class="filterDiv naan">
 <label>
   <input type="checkbox" name = "Food[]" value = "Halal Chicken Naan Roll"  > Halal Beef Naan Roll
 </label>
@@ -272,6 +328,7 @@ here are the list of our menu we currently have! </p>
   <tr><td>Iron:</td><td>g</td></tr>
 </table>
 </details>
+</div> 
 <br>
 
  <button type= "submit">Submit  </button>

@@ -5,6 +5,27 @@
 <title> Dietary & Allergen Filters  </title>
 <meta charset = "utf-8" >
 <link rel="stylesheet" href="Mato.css">
+
+
+<style>
+  .filterDiv { display: block; }
+  .btn { margin-right: 10px; margin-top: 10px; }
+</style>
+<script>
+  function filterSelection(category) {
+    const items = document.getElementsByClassName("filterDiv");
+    for (let i = 0; i < items.length; i++) {
+      if (category === "all" || items[i].classList.contains(category)) {
+        items[i].style.display = "block";
+      } else {
+        items[i].style.display = "none";
+      }
+    }
+  }
+</script>
+
+
+
 </head>
 
 <body>
@@ -14,8 +35,20 @@
 <h1> 2Mato </h1>
 
 
+<div id="myBtnContainer">
+    <button class="btn active" onclick="filterSelection('all')"> Show All</button>
+    <button class="btn" onclick="filterSelection('pizza')"> Pizza</button>
+    <button class="btn" onclick="filterSelection('pasta')"> Pasta</button>
+	 <button class="btn" onclick="filterSelection('Sandwiches')"> Sandwiches </button>
+  </div>
+
+
+
 <form action = "Mato.php" method = "POST" >
 
+
+
+<div class="filterDiv pizza">
 <h4> Pizza: </h4> 
 <label>
   <input type="checkbox" name = "Food[]" value = "Cheese Pizza"  > Cheese Pizza
@@ -48,7 +81,12 @@
   <tr><td>Saturated Fat + Trans Fat (g):</td><td>5+</td></tr>
 </table>
 </details>
+</div>
 
+
+
+
+<div class="filterDiv pizza">
 <label>
   <input type="checkbox" name = "Food[]" value = "Pepperoni Pizza" > Pepperoni Pizza
 </label>
@@ -81,7 +119,12 @@
   <tr><td>Saturated Fat + Trans Fat (g):</td><td>10+</td></tr>
 </table>
 </details>
+</div>
 
+
+
+
+ <div class="filterDiv pizza">
 <label>
   <input type="checkbox" name = "Food[]" value = "Veggie Pizza" > Veggie Pizza
 </label>
@@ -110,7 +153,13 @@
   <tr><td>Saturated Fat + Trans Fat (g):</td><td>5+</td></tr>
 </table>
 </details>
+</div>
+
+
+
+ <div class="filterDiv pizza">
 <label>
+
   <input type="checkbox"  name = "Food[]" value = "Margherita Pizza" > Margherita Pizza
 </label>
 
@@ -144,8 +193,12 @@
   <tr><td>Saturated Fat + Trans Fat (g):</td><td>5+</td></tr>
 </table>
 </details>
+</div>
 
 
+
+
+    <div class="filterDiv pizza">
 <label>
   <input type="checkbox" name = "Food[]" value = "Supreme Pizza"  > Supreme Pizza
 </label>
@@ -175,7 +228,13 @@
   <tr><td>Saturated Fat + Trans Fat (g):</td><td>5+</td></tr>
 </table>
 </details>
+</div>
+
+
+ <div class="filterDiv pasta">
 <h4> Pasta </h4>
+
+
 
 <label>
   <input type="checkbox"  name = "Food[]" value = "Chicken & Broccoli Pasta Alfredo" > Chicken & Broccoli Pasta Alfredo
@@ -210,8 +269,11 @@
   <tr><td>Saturated Fat + Trans Fat (g):</td><td>5+</td></tr>
 </table>
 </details>
+</div>
 <br>
 
+
+   <div class="filterDiv pasta">
 <label>
   <input type="checkbox" name = "Food[]" value = "Spaghetti and Meatballs" > Spaghetti and Meatballs
 </label>
@@ -242,8 +304,11 @@
   <tr><td>Saturated Fat + Trans Fat (g):</td><td>10+</td></tr>
 </table>
 </details>
+</div>
 <br>
 
+
+   <div class="filterDiv pasta">
 <label>
   <input type="checkbox" > Grilled Chicken
 </label>
@@ -274,8 +339,9 @@
   <tr><td>Saturated Fat + Trans Fat (g):</td><td>0</td></tr>
 </table>
 </details>
+</div>
 
-
+   <div class="filterDiv pasta">
 <label>
   <input type="checkbox" name = "Food[]" value = "Piperade with Penne" > Piperade with Penne
 </label>
@@ -304,8 +370,12 @@
   <tr><td>Saturated Fat + Trans Fat (g):</td><td>5+</td></tr>
 </table>
 </details>
+</div>
 
+<div class="filterDiv Sandwiches">
 <h4> Sandwiches: </h4>
+
+
 
 <label>
   <input type="checkbox" name = "Food[]" value = "Chicken & Broccoli Alfredo Sandwich" > Chicken & Broccoli Alfredo Sandwich
@@ -336,6 +406,7 @@
   <tr><td>Saturated Fat + Trans Fat (g):</td><td>12+</td></tr>
 </table>
 </details>
+</div>
 
  <button type= "submit">Submit  </button>
  <button type= "Reset"> Reset </button>

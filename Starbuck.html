@@ -1,19 +1,50 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <title> Dietary & Allergen Filters </title> 
   <meta charset="utf-8">
   <link rel="stylesheet" href="Starbuck.css">
+  
+  
+<style>
+  .filterDiv { display: block; }
+  .btn { margin-right: 10px; margin-top: 10px; }
+</style>
+<script>
+  function filterSelection(category) {
+    const items = document.getElementsByClassName("filterDiv");
+    for (let i = 0; i < items.length; i++) {
+      if (category === "all" || items[i].classList.contains(category)) {
+        items[i].style.display = "block";
+      } else {
+        items[i].style.display = "none";
+      }
+    }
+  }
+</script>
+
+  
+  
 </head>
 
 <body>
 <div class="number1"> 
 
 <h1> Starbucks </h1>
+
+<div id="myBtnContainer">
+    <button class="btn active" onclick="filterSelection('all')"> Show All</button>
+    <button class="btn" onclick="filterSelection('Frappuccino®')">  Frappuccino® </button>
+    <button class="btn" onclick="filterSelection('Bakery')"> Bakery </button>
+  </div>
   
   <img src="coffee.jpg" alt="food" class = "animated-coffee"  width="350" height="360">
   
+  
+  
+<div class="container">
+  <div class="filterDiv  Frappuccino® ">
   <p> Here are the Frappuccino® Blended Beverages Drinks menu: </p>
 
 
@@ -46,7 +77,10 @@
     <tr><td>Iron:</td><td>0 g</td></tr>
   </table>
   </details>
+  </div>
 
+
+<div class="filterDiv  Frappuccino® ">
   <label>
     <input type="checkbox" name = "Food[]" value = "Venti Caramel Frappuccino®" > Venti Caramel Frappuccino®
   </label>
@@ -75,7 +109,9 @@
     <tr><td>Iron:</td><td>0 g</td></tr>
   </table>
   </details>
+</div>
 
+<div class="filterDiv  Frappuccino® ">
   <label>
     <input type="checkbox" name = "Food[]" value = "Java Chip Frappuccino®" > Java Chip Frappuccino®
   </label>
@@ -104,7 +140,9 @@
     <tr><td>Iron:</td><td>2.7 mg</td></tr>
   </table>
   </details>
-
+  </div>
+  
+  <div class="filterDiv  Frappuccino® ">
   <label>
     <input type="checkbox" name = "Food[]" value = "Mocha Frappuccino®"	> Mocha Frappuccino®
   </label>
@@ -133,7 +171,10 @@
     <tr><td>Iron:</td><td>1.8 mg</td></tr>
   </table>
   </details>
+</div>
 
+
+<div class="filterDiv  Frappuccino® ">
   <label>
     <input type="checkbox" name = "Food[]" value = "Chai Crème Frappuccino®" > Chai Crème Frappuccino®
   </label>
@@ -161,9 +202,10 @@
     <tr><td>Iron:</td><td>0 g</td></tr>
   </table>
   </details>
-
+</div>
   <br>
 
+<div class="filterDiv  Bakery ">
   <h4> Bakery: </h4>
 
   <label>
@@ -194,7 +236,7 @@
     <tr><td>Iron:</td><td>1.8 g</td></tr>
   </table>
   </details>
-
+</div>
 
   <button type= "submit">Submit  </button>
  <button type= "Reset"> Reset </button>
@@ -220,6 +262,7 @@ to go back another menu page on Campus </p>
   
  
 </div> 
+</div>
 </form>
 </body>
 </html>

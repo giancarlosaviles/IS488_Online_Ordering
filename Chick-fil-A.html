@@ -4,226 +4,183 @@
   <title>Dietary & Allergen Filters</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="Chick-fil-A.css">
+  
+  <style>
+    .filterDiv {
+      display: none;
+    }
+    .filterDiv.show {
+      display: block;
+    }
+  </style>
 </head>
 <body>
 
-
-
-
 <div class="number1">
   <h1>Chick-fil-A Menu</h1>
-  <img src="Chick.jpg"   alt="food" class = "animated-chicken" width="250" height="250">
+  <img src="Chick.jpg" alt="food" class="animated-chicken" width="250" height="250">
 
   <p>Thank you for choosing Chick-fil-A Menu. Here are the list of menu items we currently offer:</p>
-  
-  <form action = "Chicken.php" method = "POST">
 
-  <p class="number2">Drink Menu:</p>
+  <!-- FILTER BUTTONS -->
+  <div id="myBtnContainer">
+    <button class="btn active" onclick="filterSelection(this, 'all')">Show all</button>
+    <button class="btn" onclick="filterSelection(this, 'chicken')">Chicken</button>
+    <button class="btn" onclick="filterSelection(this, 'lemonade')">Lemonade</button>
+    <button class="btn" onclick="filterSelection(this, 'sweet-tea')">Sweet Tea</button>
+  </div>
 
-  <label>
-    <input type="checkbox" name = "Food[]" value = "Freshly-Brewed Iced Tea Unsweetened"  > Freshly-Brewed Iced Tea Unsweetened
- </label>
- <p class = "number5" > Ingredients: </p>
- <p class = "number4" > Classic lemonade using three simple ingredients: real lemon juice—not from concentrate, cane sugar, and water. </p>
- <details>
- 
- <summary>Nutrition Facts</summary>
-  <table>
-    <tr><td>Fat Calories:</td><td>0</td></tr>
-    <tr><td>Total Fat:</td><td>0 g</td></tr>
-    <tr><td>Saturated Fat:</td><td>0 g</td></tr>
-    <tr><td>Trans Fat:</td><td>0 g</td></tr>
-    <tr><td>Cholesterol:</td><td>0 mg</td></tr>
-    <tr><td>Sodium:</td><td>mg</td></tr>
-    <tr><td>Potassium:</td><td>g</td></tr>
-    <tr><td>Total Carbohydrates:</td><td>0 g</td></tr>
-    <tr><td>Dietary Fiber:</td><td>0 g</td></tr>
-    <tr><td>Sugars:</td><td>0 g</td></tr>
-    <tr><td>Protein:</td><td>0 g</td></tr>
-    <tr><td>Vitamin A:</td><td>g</td></tr>
-    <tr><td>Vitamin C:</td><td>0 g</td></tr>
-    <tr><td>Calcium:</td><td>0 g</td></tr>
-    <tr><td>Iron:</td><td>0 g</td></tr>
-  </table>
-  </details>
-  
-  
- <br>
+  <form action="Chicken.php" method="POST">
 
-<label>
-  <input type="checkbox"  name = "Food[]" value = "Chick-fil-A® Lemonade" > Chick-fil-A® Lemonade
-</label>
+    <p class="number2">Drink Menu:</p>
 
- <p class = "number5" > Ingredients: </p>
-<p class="number4">Classic lemonade using three simple ingredients: real lemon juice—not from concentrate, cane sugar, and water.</p>
-<details>
-  <summary>Nutrition Facts</summary>
-  <table>
-    <tr><td>Fat Calories:</td><td>0</td></tr>
-    <tr><td>Total Fat:</td><td>0 g</td></tr>
-    <tr><td>Saturated Fat:</td><td>0 g</td></tr>
-    <tr><td>Trans Fat:</td><td>0 g</td></tr>
-    <tr><td>Cholesterol:</td><td>0 mg</td></tr>
-    <tr><td>Sodium:</td><td>0 mg</td></tr>
-    <tr><td>Potassium:</td><td>0 g</td></tr>
-    <tr><td>Total Carbohydrates:</td><td>58 g</td></tr>
-    <tr><td>Dietary Fiber:</td><td>0 g</td></tr>
-    <tr><td>Sugars:</td><td>55 g</td></tr>
-    <tr><td>Protein:</td><td>0 g</td></tr>
-    <tr><td>Vitamin A:</td><td>0 g</td></tr>
-    <tr><td>Vitamin C:</td><td>0 g</td></tr>
-    <tr><td>Calcium:</td><td>0 g</td></tr>
-    <tr><td>Iron:</td><td>0 g</td></tr>
-  </table>
-</details>
+    <!-- SWEET TEA -->
+    <div class="filterDiv sweet-tea">
+      <label>
+        <input type="checkbox" name="Food[]" value="Freshly-Brewed Iced Tea Unsweetened"> Freshly-Brewed Iced Tea Unsweetened
+      </label>
+      <p class="number5">Ingredients:</p>
+      <p class="number4">Classic brewed tea with no added sweeteners.</p>
+      <details>
+        <summary>Nutrition Facts</summary>
+        <table>
+          <tr><td>Fat Calories:</td><td>0</td></tr>
+          <tr><td>Total Fat:</td><td>0 g</td></tr>
+          <tr><td>Saturated Fat:</td><td>0 g</td></tr>
+          <tr><td>Trans Fat:</td><td>0 g</td></tr>
+          <tr><td>Cholesterol:</td><td>0 mg</td></tr>
+          <tr><td>Sodium:</td><td>0 mg</td></tr>
+          <tr><td>Potassium:</td><td>0 g</td></tr>
+          <tr><td>Total Carbohydrates:</td><td>0 g</td></tr>
+          <tr><td>Dietary Fiber:</td><td>0 g</td></tr>
+          <tr><td>Sugars:</td><td>0 g</td></tr>
+          <tr><td>Protein:</td><td>0 g</td></tr>
+        </table>
+      </details>
+    </div>
 
-<br>
+    <!-- LEMONADE -->
+    <div class="filterDiv lemonade">
+      <label>
+        <input type="checkbox" name="Food[]" value="Chick-fil-A® Lemonade"> Chick-fil-A® Lemonade
+      </label>
+      <p class="number5">Ingredients:</p>
+      <p class="number4">Classic lemonade with lemon juice, cane sugar, and water.</p>
+      <details>
+        <summary>Nutrition Facts</summary>
+        <table>
+          <tr><td>Total Carbohydrates:</td><td>58 g</td></tr>
+          <tr><td>Sugars:</td><td>55 g</td></tr>
+        </table>
+      </details>
+    </div>
 
-<label>
-  <input type="checkbox"  name = "Food[]" value = "Chick-fil-A® Lemonade"  > Chick-fil-A® Diet Lemonade
-</label>
+    <div class="filterDiv lemonade">
+      <label>
+        <input type="checkbox" name="Food[]" value="Chick-fil-A® Diet Lemonade"> Chick-fil-A® Diet Lemonade
+      </label>
+      <p class="number5">Ingredients:</p>
+      <p class="number4">Sweetened with Splenda® No Calorie Sweetener.</p>
+      <details>
+        <summary>Nutrition Facts</summary>
+        <table>
+          <tr><td>Total Carbohydrates:</td><td>14 g</td></tr>
+          <tr><td>Sugars:</td><td>2 g</td></tr>
+        </table>
+      </details>
+    </div>
 
-<p class = "number5" > Ingredients: </p>
-<p class="number4">Classic lemonade using three simple ingredients: real lemon juice—not from concentrate, cane sugar, and water. Diet Lemonade is sweetened with Splenda® No Calorie Sweetener.</p>
-<details>
-  <summary>Nutrition Facts</summary>
-  <table>
-    <tr><td>Fat Calories:</td><td>0</td></tr>
-    <tr><td>Total Fat:</td><td>0 g</td></tr>
-    <tr><td>Saturated Fat:</td><td>0 g</td></tr>
-    <tr><td>Trans Fat:</td><td>0 g</td></tr>
-    <tr><td>Cholesterol:</td><td>0 mg</td></tr>
-    <tr><td>Sodium:</td><td>0 mg</td></tr>
-    <tr><td>Potassium:</td><td>0 g</td></tr>
-    <tr><td>Total Carbohydrates:</td><td>14 g</td></tr>
-    <tr><td>Dietary Fiber:</td><td>0 g</td></tr>
-    <tr><td>Sugars:</td><td>2 g</td></tr>
-    <tr><td>Protein:</td><td>0 g</td></tr>
-    <tr><td>Vitamin A:</td><td>0 g</td></tr>
-    <tr><td>Vitamin C:</td><td>0 g</td></tr>
-    <tr><td>Calcium:</td><td>0 g</td></tr>
-    <tr><td>Iron:</td><td>0 g</td></tr>
-  </table>
-</details>
+    <p class="number2">Here are the Entrees:</p>
 
-<br>
+    <!-- CHICKEN -->
+    <div class="filterDiv chicken">
+      <label>
+        <input type="checkbox" name="Food[]" value="Chick-fil-A® Chicken Sandwich"> Chick-fil-A® Chicken Sandwich
+      </label>
+      <p class="number5">Ingredients:</p>
+      <p class="number4">Boneless chicken breast seasoned, breaded, and fried.</p>
+      <details>
+        <summary>Nutrition Facts</summary>
+        <table>
+          <tr><td>Total Fat:</td><td>17 g</td></tr>
+          <tr><td>Protein:</td><td>29 g</td></tr>
+        </table>
+      </details>
+    </div>
 
-<p class="number2">Here are the Entrees:</p>
+    <div class="filterDiv chicken">
+      <label>
+        <input type="checkbox" name="Food[]" value="Spicy Chicken Sandwich"> Spicy Chicken Sandwich
+      </label>
+      <p class="number5">Ingredients:</p>
+      <p class="number4">Spicy blend of peppers, hand-breaded chicken breast.</p>
+      <details>
+        <summary>Nutrition Facts</summary>
+        <table>
+          <tr><td>Total Fat:</td><td>19 g</td></tr>
+          <tr><td>Protein:</td><td>28 g</td></tr>
+        </table>
+      </details>
+    </div>
 
-<label>
-  <input type="checkbox" name = "Food[]" value = " Chick-fil-A® Chicken Sandwich" > Chick-fil-A® Chicken Sandwich
-</label>
+    <div class="filterDiv chicken">
+      <label>
+        <input type="checkbox" name="Food[]" value="Spicy Chicken Sandwich Deluxe"> Spicy Chicken Sandwich Deluxe
+      </label>
+      <p class="number5">Ingredients:</p>
+      <p class="number4">With lettuce, tomato, and Pepper Jack Cheese.</p>
+      <details>
+        <summary>Nutrition Facts</summary>
+        <table>
+          <tr><td>Total Fat:</td><td>25 g</td></tr>
+          <tr><td>Protein:</td><td>33 g</td></tr>
+        </table>
+      </details>
+    </div>
 
-<p class = "number5" > Ingredients: </p>
-<p class="number4">A boneless breast of chicken seasoned to perfection, hand-breaded, pressure cooked in 100% refined peanut oil and served on a toasted, buttered bun with dill pickle chips.</p>
-<details>
-  <summary>Nutrition Facts</summary>
-  <table>
-    <tr><td>Fat Calories:</td><td>153</td></tr>
-    <tr><td>Total Fat:</td><td>17 g</td></tr>
-    <tr><td>Saturated Fat:</td><td>4 g</td></tr>
-    <tr><td>Trans Fat:</td><td>0 g</td></tr>
-    <tr><td>Cholesterol:</td><td>70 mg</td></tr>
-    <tr><td>Sodium:</td><td>0 mg</td></tr>
-    <tr><td>Potassium:</td><td>0 g</td></tr>
-    <tr><td>Total Carbohydrates:</td><td>41 g</td></tr>
-    <tr><td>Dietary Fiber:</td><td>1 g</td></tr>
-    <tr><td>Sugars:</td><td>6 g</td></tr>
-    <tr><td>Protein:</td><td>29 g</td></tr>
-    <tr><td>Vitamin A:</td><td>0 g</td></tr>
-    <tr><td>Vitamin C:</td><td>0 g</td></tr>
-    <tr><td>Calcium:</td><td>0 g</td></tr>
-    <tr><td>Iron:</td><td>0 g</td></tr>
-  </table>
-</details>
+    <br>
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
 
-<br>
-
-<label>
-  <input type="checkbox" name = "Food[]" value = "Spicy Chicken Sandwich" > Spicy Chicken Sandwich 
-</label>
-
-<p class = "number5" > Ingredients: </p>
-<p class= "number4">A boneless breast of chicken seasoned with a spicy blend of peppers, hand-breaded, pressure cooked in 100% refined peanut oil and served on a toasted, buttered bun with dill pickle chips.</p>
-<details>
-  <summary>Nutrition Facts</summary>
-  <table>
-    <tr><td>Fat Calories:</td><td>171</td></tr>
-    <tr><td>Total Fat:</td><td>19 g</td></tr>
-    <tr><td>Saturated Fat:</td><td>4 g</td></tr>
-    <tr><td>Trans Fat:</td><td>0 g</td></tr>
-    <tr><td>Cholesterol:</td><td>65 mg</td></tr>
-    <tr><td>Sodium:</td><td>0 mg</td></tr>
-    <tr><td>Potassium:</td><td>0 g</td></tr>
-    <tr><td>Total Carbohydrates:</td><td>45 g</td></tr>
-    <tr><td>Dietary Fiber:</td><td>2 g</td></tr>
-    <tr><td>Sugars:</td><td>6 g</td></tr>
-    <tr><td>Protein:</td><td>28 g</td></tr>
-    <tr><td>Vitamin A:</td><td>0 g</td></tr>
-    <tr><td>Vitamin C:</td><td>0 g</td></tr>
-    <tr><td>Calcium:</td><td>0 g</td></tr>
-    <tr><td>Iron:</td><td>0 g</td></tr>
-  </table>
-</details>
-
-<br>
-
-<label>
-  <input type="checkbox" name = "Food[]" value = "Spicy Chicken Sandwich Deluxe" > Spicy Chicken Sandwich Deluxe
-</label>
-
-
-<p class = "number5" > Ingredients: </p>
-<p class="number4">A boneless breast of chicken seasoned with a spicy blend of peppers, hand-breaded, pressure cooked in 100% refined peanut oil and served on a toasted, buttered bun with dill pickle chips, Green Leaf lettuce, tomato and Pepper Jack Cheese.</p>
-<details>
-  
-  
-  <summary>Nutrition Facts</summary>
-  <table>
-    <tr><td>Fat Calories:</td><td>225</td></tr>
-    <tr><td>Total Fat:</td><td>25 g</td></tr>
-    <tr><td>Saturated Fat:</td><td>8 g</td></tr>
-    <tr><td>Trans Fat:</td><td>0 g</td></tr>
-    <tr><td>Cholesterol:</td><td>85 mg</td></tr>
-    <tr><td>Sodium:</td><td>0 mg</td></tr>
-    <tr><td>Potassium:</td><td>0 g</td></tr>
-    <tr><td>Total Carbohydrates:</td><td>47 g</td></tr>
-    <tr><td>Dietary Fiber:</td><td>3 g</td></tr>
-    <tr><td>Sugars:</td><td>7 g</td></tr>
-    <tr><td>Protein:</td><td>33 g</td></tr>
-    <tr><td>Vitamin A:</td><td>0 g</td></tr>
-    <tr><td>Vitamin C:</td><td>0 g</td></tr>
-    <tr><td>Calcium:</td><td>0 g</td></tr>
-    <tr><td>Iron:</td><td>0 g</td></tr>
-  </table>
-</details>
-
-
- <button type= "submit">Submit  </button>
- <button type= "Reset"> Reset </button>
-
-
-
-<p class = "number3" > Please click on the following links
-to go back another menu page on Campus </p>
-
-
-
-
-<ul> 
-
-<li> <a href = "Menu.html" > Return back to the menu selection page </a> </li>
-<li> <a href = "Chick-fil-A.html" > Chick-fil-A </a> </li>
-<li> <a href = "Dunkin.html" > Dunkin </a> </li>
-<li> <a href = "Einstein.html" > Einstein Brother's Bagels </a> </li>
-<li> <a href = "Halal_Shack.html" > Halal Shack </a> </li>
-<li> <a href = "Mato.html" > 2.Mato </a> </li>
-<li> <a href = "Starbuck.html" > Starbuck </a> </li>
-<li> <a href = "Sushi.html" > Sushi Do </a> </li>
-
-</ul>
-
-</form>
+    <p class="number3">Please click on the following links to go back another menu page on Campus</p>
+    <ul>
+      <li><a href="Menu.html">Return back to the menu selection page</a></li>
+      <li><a href="Chick-fil-A.html">Chick-fil-A</a></li>
+      <li><a href="Dunkin.html">Dunkin</a></li>
+      <li><a href="Einstein.html">Einstein Brother's Bagels</a></li>
+      <li><a href="Halal_Shack.html">Halal Shack</a></li>
+      <li><a href="Mato.html">2.Mato</a></li>
+      <li><a href="Starbuck.html">Starbuck</a></li>
+      <li><a href="Sushi.html">Sushi Do</a></li>
+    </ul>
+  </form>
 </div>
+
+<!-- JavaScript -->
+<script>
+function filterSelection(btn, category) {
+  let items = document.getElementsByClassName("filterDiv");
+  if (category == "all") category = "";
+
+  for (let i = 0; i < items.length; i++) {
+    items[i].classList.remove("show");
+    if (items[i].className.indexOf(category) > -1 || category === "") {
+      items[i].classList.add("show");
+    }
+  }
+
+  let btns = document.getElementsByClassName("btn");
+  for (let i = 0; i < btns.length; i++) {
+    btns[i].classList.remove("active");
+  }
+  btn.classList.add("active");
+}
+
+window.onload = function () {
+  const defaultBtn = document.querySelector("#myBtnContainer .btn.active");
+  filterSelection(defaultBtn, 'all');
+};
+</script>
+
 </body>
 </html>

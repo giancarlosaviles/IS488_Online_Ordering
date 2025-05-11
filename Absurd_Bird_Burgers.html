@@ -1,31 +1,36 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-
-<title> Dietary & Allergen Filters </title> 
-
-<meta charset = "utf-8" >
-<link rel="stylesheet" href="Absurd_Bird_Burgers.css" >
-
+  <title> Dietary & Allergen Filters </title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="Absurd_Bird_Burgers.css">
 </head>
 
-
 <body>
-<div class = "number1"> 
+
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('chicken')"> Chicken</button>
+  <button class="btn" onclick="filterSelection('turkey')"> Turkey</button>
+</div>
+
+<div class="number1"> 
 
 <h1> Absurd Bird & Burgers Menu </h1>
 
   <img src="Burger.jpg" alt="food" class="animated-burger" width="250" height="250">
 
-<p class = "number3" >  Thank you for choosing Absurd Bird & Burgers Menu
+<p class="number3"> Thank you for choosing Absurd Bird & Burgers Menu
 here are the list of our menu we currently have: </p>
-
 
 <form action="Absurd_Bird_Burgers.php" method="POST">
 
+<div class="container">
 
-<label>
-  <input type="checkbox" name = "Food[]" value = "Buffalo Ranch Chicken Sandwich"  > Buffalo Ranch Chicken Sandwich
+<div class="filterDiv chicken">
+<label> 
+  <input type="checkbox" name="Food[]" value="Buffalo Ranch Chicken Sandwich"> Buffalo Ranch Chicken Sandwich
 </label>
 
 <details>
@@ -51,10 +56,11 @@ here are the list of our menu we currently have: </p>
   <tr><td>Vitamin A:</td><td>0+ RE</td></tr>
 </table>
 </details>
-<br>
+</div>
 
+<div class="filterDiv chicken">
 <label>
-  <input type="checkbox" name = "Food[]" value = " Chicken Philly Cheesesteak" > Chicken Philly Cheesesteak
+  <input type="checkbox" name="Food[]" value="Chicken Philly Cheesesteak"> Chicken Philly Cheesesteak
 </label>
 <details>
 <summary> Nutrient Fact </summary>
@@ -79,11 +85,11 @@ here are the list of our menu we currently have: </p>
   <tr><td>Vitamin A (RE):</td><td>-</td></tr>
 </table>
 </details>
+</div>
 
-<br> 
-
+<div class="filterDiv chicken">
 <label>
-  <input type="checkbox" name = "Food[]" value = "Chicken Biscuit Sandwich" > Chicken Biscuit Sandwich
+  <input type="checkbox" name="Food[]" value="Chicken Biscuit Sandwich"> Chicken Biscuit Sandwich
 </label>
 <details>
 <summary> Nutrient Fact </summary>
@@ -108,14 +114,13 @@ here are the list of our menu we currently have: </p>
   <tr><td>Vitamin A (RE):</td><td>10+</td></tr>
 </table>
 </details>
+</div>
 
-<br>
-
+<div class="filterDiv chicken">
 <label>
-  <input type="checkbox" name = "Food[]"  value = "Chicky Parm Sandwich" > Chicky Parm Sandwich
+  <input type="checkbox" name="Food[]" value="Chicky Parm Sandwich"> Chicky Parm Sandwich
 </label>
-<p class = "number2" > Potato crusted chicken, mozzarella, pesto mayo, tomato sauce, on brioche </p>
-
+<p class="number2"> Potato crusted chicken, mozzarella, pesto mayo, tomato sauce, on brioche </p>
 <details>
 <summary> Nutrient Fact </summary>
 <table>
@@ -139,18 +144,13 @@ here are the list of our menu we currently have: </p>
   <tr><td>Vitamin A (RE):</td><td>25+</td></tr>
 </table>
 </details>
+</div>
 
-
-<br>
-
+<div class="filterDiv chicken">
 <label>
-  <input type="checkbox" name = "Food[]" value = "Chicken Bacon Ranch in a White Wrap"  > Chicken Bacon Ranch in a White Wrap
+  <input type="checkbox" name="Food[]" value="Chicken Bacon Ranch in a White Wrap"> Chicken Bacon Ranch in a White Wrap
 </label>
-
-<p class = "number2" > Grilled Chicken, Bacon & Ranch in a White Wrap
-
-
-
+<p class="number2"> Grilled Chicken, Bacon & Ranch in a White Wrap </p>
 <details>
 <summary> Nutrient Fact </summary>
 <table>
@@ -174,17 +174,13 @@ here are the list of our menu we currently have: </p>
   <tr><td>Vitamin A (RE):</td><td>5+</td></tr>
 </table>
 </details>
+</div>
 
-<br>
-
+<div class="filterDiv turkey">
 <label>
-  <input type="checkbox" name = "Food[]"  value = "Big Daddy Turkey"  > Big Daddy Turkey
+  <input type="checkbox" name="Food[]" value="Big Daddy Turkey"> Big Daddy Turkey
 </label>
-
-<p class = "number2" > turkey, provolone, arugula, tomato, pickled onion, pesto mayo, sourdough
-
-
-
+<p class="number2"> turkey, provolone, arugula, tomato, pickled onion, pesto mayo, sourdough </p>
 <details>
 <summary> Nutrient Fact </summary>
 <table>
@@ -208,103 +204,39 @@ here are the list of our menu we currently have: </p>
   <tr><td>Vitamin A (RE):</td><td>15+</td></tr>
 </table>
 </details>
+</div>
+
+<!-- Add Chicken Wings and Chicken Tenders inside filterDiv chicken too if needed -->
 
 <br>
+<button type="submit">Submit</button>
+<button type="reset">Reset</button>
 
-<label>
-  <input type="checkbox" name = "Food[]"  value = "Pollo House Chicken Wings"  > Pollo House Chicken Wings
-</label>
-
-
-
-<details>
-<summary> Nutrient Fact </summary>
-<table>
-  <tr><td>Calories:</td><td>460</td></tr>
-  <tr><td>Calories From Fat:</td><td>290</td></tr>
-  <tr><td>Protein:</td><td>40g</td></tr>
-  <tr><td>Total Carbohydrates:</td><td>less than 1g</td></tr>
-  <tr><td>Sugar:</td><td>0g</td></tr>
-  <tr><td>Dietary Fiber:</td><td>0g</td></tr>
-  <tr><td>Total Fat:</td><td>32g</td></tr>
-  <tr><td>Saturated Fat:</td><td>9g</td></tr>
-  <tr><td>Trans Fat:</td><td>-</td></tr>
-  <tr><td>Saturated Fat + Trans Fat:</td><td>10g+</td></tr>
-  <tr><td>Cholesterol:</td><td>235mg</td></tr>
-  <tr><td>Sodium:</td><td>1410mg</td></tr>
-  <tr><td>Potassium:</td><td>370mg</td></tr>
-  <tr><td>Calcium:</td><td>30mg</td></tr>
-  <tr><td>Iron:</td><td>1.6mg</td></tr>
-  <tr><td>Vitamin D:</td><td>10 IU</td></tr>
-  <tr><td>Vitamin C:</td><td>0mg</td></tr>
-  <tr><td>Vitamin A (RE):</td><td>-</td></tr>
-  <tr><td>Avoid Gluten</td><td></td></tr>
-</table>
-</details>
-<br> 
-
-
-
-
-
-<label>
-  <input type="checkbox" name = "Food[]"  value = "Chicken Tenders" > Chicken Tenders
-</label>
-
-<details>
-<summary> Nutrient Fact </summary>
-<table>
-  <tr><td>Calories:</td><td>310</td></tr>
-  <tr><td>Calories From Fat:</td><td>160</td></tr>
-  <tr><td>Protein:</td><td>21g</td></tr>
-  <tr><td>Total Carbohydrates:</td><td>15g</td></tr>
-  <tr><td>Sugar:</td><td>0g</td></tr>
-  <tr><td>Dietary Fiber:</td><td>0g</td></tr>
-  <tr><td>Total Fat:</td><td>18g</td></tr>
-  <tr><td>Saturated Fat:</td><td>3g</td></tr>
-  <tr><td>Trans Fat:</td><td>0g</td></tr>
-  <tr><td>Saturated Fat + Trans Fat:</td><td>5g+</td></tr>
-  <tr><td>Cholesterol:</td><td>45mg</td></tr>
-  <tr><td>Sodium:</td><td>670mg</td></tr>
-  <tr><td>Potassium:</td><td>0mg+</td></tr>
-  <tr><td>Calcium:</td><td>0mg</td></tr>
-  <tr><td>Iron:</td><td>0.9mg</td></tr>
-  <tr><td>Vitamin D:</td><td>-</td></tr>
-  <tr><td>Vitamin C:</td><td>0mg</td></tr>
-</table>
-</details>
-
-<br> 
-
- <button type= "submit">Submit  </button>
- <button type= "Reset"> Reset </button>
- 
-
-
-
-<p class = "number3" > Please click on the following links
-to go back another menu page on Campus: </p>
-
-
-<ul > 
-
-<li> <a href = "Menu.html" > Return back to the menu selection page </a> </li>
-<li> <a href = "Chick-fil-A.html" > Chick-fil-A </a> </li>
-<li> <a href = "Dunkin.html" > Dunkin </a> </li>
-<li> <a href = "Einstein.html" > Einstein Brother's Bagels </a> </li>
-<li> <a href = "Halal_Shack.html" > Halal Shack </a> </li>
-<li> <a href = "Mato.html" > 2.Mato </a> </li>
-<li> <a href = "Starbuck.html" > Starbuck </a> </li>
-<li> <a href = "Sushi.html" > Sushi Do </a> </li>
-
+<p class="number3">Please click on the following links to go back another menu page on Campus:</p>
+<ul> 
+  <li><a href="Menu.html">Return back to the menu selection page</a></li>
+  <li><a href="Chick-fil-A.html">Chick-fil-A</a></li>
+  <li><a href="Dunkin.html">Dunkin</a></li>
+  <li><a href="Einstein.html">Einstein Brother's Bagels</a></li>
+  <li><a href="Halal_Shack.html">Halal Shack</a></li>
+  <li><a href="Mato.html">2.Mato</a></li>
+  <li><a href="Starbuck.html">Starbuck</a></li>
+  <li><a href="Sushi.html">Sushi Do</a></li>
 </ul>
-
-
 
 </form>
 </div>
+
+<!-- Filtering Script -->
+<script>
+function filterSelection(category) {
+  const items = document.getElementsByClassName("filterDiv");
+  if (category === "all") category = "";
+  for (let i = 0; i < items.length; i++) {
+    items[i].style.display = items[i].className.indexOf(category) > -1 ? "block" : "none";
+  }
+}
+</script>
+
 </body>
-
 </html>
-
-
