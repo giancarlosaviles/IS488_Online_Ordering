@@ -31,28 +31,44 @@
 
             <button type="submit">Submit Review</button>
         </form>
+
+        <div id="reviewList" style="margin-top: 40px;">
+            <h2>Recent Reviews</h2>
+            <div id="reviews"></div>
+        </div>
     </div>
 
     <script>
+    function loadReviews() {
+        fetch("load_reviews.php")
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById("reviews").innerHTML = data;
+            });
+    }
+
+    document.addEventListener("DOMContentLoaded", loadReviews);
+
     document.getElementById("reviewForm").addEventListener("submit", function(e) {
         e.preventDefault();
-
         const formData = new FormData(this);
 
         fetch("submit_review.php", {
             method: "POST",
             body: formData
         })
-        .then(response => {
-            if (response.redirected) {
-                window.location.href = response.url;
+        .then(response => response.json())
+        .then(data => {
+            if (data.success && data.redirect) {
+                window.location.href = data.redirect;
             } else {
-                alert("Review submission failed.");
+                alert("Submission succeeded but redirection failed.");
+                loadReviews(); // fallback
             }
         })
         .catch(error => {
             console.error("Error:", error);
-            alert("Error submitting the form.");
+            alert("There was a problem submitting your review.");
         });
     });
     </script>
