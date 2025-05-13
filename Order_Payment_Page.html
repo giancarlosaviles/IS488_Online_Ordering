@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Review & Place Order - UMBC Eats</title>
+  <link rel="stylesheet" href="order-review.css" /> <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* UMBC Colors */
+    :root {
+      --umbc-gold: #FFC20E;
+      --umbc-black: #000000;
+      --umbc-retriever-red: #CF102D;
+      --umbc-dark-grey: #374151; /* For text */
+      --umbc-medium-grey: #6b7280; /* For secondary text */
+      --umbc-light-grey-bg: #f9fafb; /* Page background */
+      --umbc-container-bg: #fffef0; /* Light Yellow background for the form container */
+      --umbc-border-grey: #d1d5db;
+      --umbc-input-bg: #ffffff; /* Inputs will remain white for contrast */
+      --umbc-button-text: var(--umbc-black); /* Text on gold buttons */
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--umbc-light-grey-bg); /* Page background remains light gray */
+      color: var(--umbc-dark-grey);
+      line-height: 1.6;
+    }
+    .main-container {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: var(--umbc-container-bg); /* Updated to light yellow */
+      border-radius: 0.75rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    .page-header {
+        display: flex;
+        align-items: center; /* Vertically align logo and title */
+        margin-bottom: 1.5rem;
+        gap: 1rem; /* Space between logo and title */
+    }
+    .logo-img {
+        height: 60px; 
+        width: auto;
+        object-fit: contain; 
+    }
+    .page-header h1 {
+      color: var(--umbc-dark-grey);
+      font-size: 1.875rem; /* 30px */
+      font-weight: 700; 
+      margin-bottom: 0; 
+    }
+    label {
+      display: block;
+      margin-bottom: 0.375rem; /* 6px */
+      font-size: 0.9375rem; /* 15px */
+      font-weight: 500;
+      color: var(--umbc-dark-grey);
+    }
+    .label-group {
+        margin-bottom: 0.625rem; /* 10px */
+        font-weight: 600;
+    }
+    select, input[type="text"], input[type="password"], input[type="email"], input[type="number"] {
+      display: block;
+      margin-top: 0.25rem;
+      margin-bottom: 1rem;
+      width: 100%;
+      padding: 0.625rem 0.875rem; /* 10px 14px */
+      font-size: 1rem;
+      border-radius: 0.375rem; /* 6px */
+      border: 1px solid var(--umbc-border-grey);
+      background-color: var(--umbc-input-bg); /* Inputs remain white */
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    select:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="number"]:focus {
+        border-color: var(--umbc-gold);
+        box-shadow: 0 0 0 3px rgba(255, 194, 14, 0.3); /* Gold focus ring */
+        outline: none;
+    }
+    select {
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%23A7A8AA' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E"); 
+      background-position: right 0.75rem center;
+      background-repeat: no-repeat;
+      background-size: 1.25em 1.25em;
+      padding-right: 2.5rem;
+    }
+    .store-banner {
+      background-color: #fffbeb; 
+      color: #78350f; 
+      padding: 1rem;
+      font-weight: 500;
+      text-align: center;
+      border-radius: 0.375rem;
+      margin-bottom: 1.5rem;
+      margin-top: 1.5rem;
+      border: 1px solid #fef3c7; 
+    }
+    .item-summary .item {
+      background: var(--umbc-light-grey-bg); 
+      border: 1px solid #e5e7eb;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 0.375rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    @media (min-width: 640px) {
+        .item-summary .item {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    .item-details { flex-grow: 1; }
+    .item-details p { margin: 0; }
+    .item-details .edit-link {
+        font-size: 0.875rem;
+        color: var(--umbc-gold); 
+        text-decoration: underline;
+        margin-top: 0.25rem;
+        display: inline-block;
+    }
+    .item-details .edit-link:hover { color: #d4a100; }
+    .item-controls { display: flex; align-items: center; gap: 0.75rem; }
+    .counter { display: flex; align-items: center; }
+    .counter button, .remove-btn {
+      background-color: var(--umbc-gold);
+      color: var(--umbc-button-text);
+      border: none;
+      padding: 0.5rem 0.75rem;
+      border-radius: 0.375rem;
+      cursor: pointer;
+      font-weight: 600; 
+      transition: background-color 0.2s;
+      line-height: 1;
+    }
+    .remove-btn {
+        background-color: var(--umbc-retriever-red); 
+        color: white;
+    }
+    .remove-btn:hover { background-color: #a7001a; }
+    .counter button:hover { background-color: #e6ac00; }
+    .counter button:disabled {
+      background-color: #e5e7eb; 
+      color: #9ca3af; 
+      cursor: not-allowed;
+    }
+    .counter span { margin: 0 0.75rem; font-weight: 500; }
+    .totals {
+      border-top: 1px solid var(--umbc-border-grey);
+      padding-top: 1rem; margin-top: 1.5rem;
+    }
+    .totals p {
+      font-size: 1rem; margin-bottom: 0.5rem; display: flex; justify-content: space-between;
+    }
+    .totals hr { border: none; border-top: 1px dashed var(--umbc-border-grey); margin: 0.5rem 0; }
+    .totals p strong { font-size: 1.125rem; font-weight: 700; } 
+    .placeorder-btn {
+      display: block; width: 100%;
+      background-color: var(--umbc-gold);
+      color: var(--umbc-button-text);
+      font-weight: 700; 
+      padding: 0.875rem; 
+      text-align: center; text-decoration: none;
+      border: none; border-radius: 0.375rem; cursor: pointer;
+      font-size: 1.125rem;
+      transition: background-color 0.3s ease, transform 0.1s ease;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .placeorder-btn:hover { background-color: #e6ac00;  transform: translateY(-1px); }
+    .placeorder-btn:active { transform: translateY(0px); }
+    .back-link {
+      display: inline-block; 
+      text-align: center;
+      margin-bottom: 1rem;
+      color: var(--umbc-gold);
+      text-decoration: none; 
+      font-weight: 500;
+      padding: 0.5rem 0; 
+    }
+    .back-link:hover { color: #d4a100; text-decoration: underline; }
+
+    .payment-options-container { margin-top: 1.5rem; margin-bottom: 1.5rem; }
+    .payment-option {
+      background-color: #fdfdfa; 
+      border: 1px solid var(--umbc-border-grey);
+      border-radius: 0.5rem;
+      padding: 1rem; margin-bottom: 0.75rem; cursor: pointer;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .payment-option:hover, .payment-option.selected { 
+        border-color: var(--umbc-gold);
+        box-shadow: 0 0 0 2px rgba(255, 194, 14, 0.2);
+    }
+    .payment-option input[type="radio"] {
+      margin-right: 0.75rem;
+      accent-color: var(--umbc-gold); 
+      width: auto; vertical-align: middle;
+    }
+    .payment-option label { display: inline; font-weight: 500; color: var(--umbc-dark-grey); vertical-align: middle; }
+    .payment-details-input-container { margin-top: 0.75rem; padding-left: 2rem; }
+    .hidden { display: none !important; }
+
+    .user-type-selection { margin-bottom: 1.5rem; padding-top: 0.5rem; }
+    .user-type-selection .label-group { margin-bottom: 0.75rem; }
+    .user-type-option { margin-bottom: 0.5rem; }
+    .user-type-option input[type="radio"] {
+        margin-right: 0.5rem;
+        accent-color: var(--umbc-gold); 
+    }
+    .user-type-option label { font-weight: normal; }
+    #guest-details-container {
+        margin-top: 1rem; padding-top: 0.5rem; padding-left: 0;
+        border-top: 1px solid var(--umbc-border-grey);
+    }
+    #guest-details-container label { margin-top: 0.75rem; }
+    #guest-details-container input[type="text"],
+    #guest-details-container input[type="email"] { margin-bottom: 0.5rem; }
+
+    #greeting-message {
+        color: var(--umbc-dark-grey);
+        font-weight: 600;
+        margin-bottom: 1rem; 
+    }
+
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <div class="page-header">
+      <img src="https://raw.githubusercontent.com/giancarlosaviles/IS488_Online_Ordering/main/logo.png" 
+           alt="UMBC Eats Logo" 
+           class="logo-img"
+           onerror="this.onerror=null; this.src='https://placehold.co/150x60/FFC20E/000000?text=UMBC+Logo&font=Inter';">
+      <h1>Review & Place Your Order</h1>
+    </div>
+    <a href="menu.html" class="back-link">← Back to Menu</a> 
+    
+    <section class="user-info">
+      <div class="user-type-selection">
+        <label class="label-group">Are you ordering as a guest or a student?</label>
+        <div class="user-type-option">
+          <input type="radio" id="user-type-guest" name="user-type" value="guest" checked>
+          <label for="user-type-guest">Order as Guest</label>
+        </div>
+        <div class="user-type-option">
+          <input type="radio" id="user-type-student" name="user-type" value="student">
+          <label for="user-type-student">I'm a Student (Logged In)</label>
+        </div>
+        <div id="guest-details-container">
+          <label for="guest-name">Guest Name:</label>
+          <input type="text" id="guest-name" placeholder="Your Name">
+          <label for="guest-email">Guest Email (for confirmation):</label>
+          <input type="email" id="guest-email" placeholder="your.email@example.com">
+        </div>
+      </div>
+      <h2 id="greeting-message">Hi, Guest!</h2>
+      <label for="pickup-time">Select Pickup Time:</label>
+      <select id="pickup-time" class="mt-1 block w-full">
+        <option value="">-- Select Time --</option>
+        <option value="ASAP">ASAP (within 15-20 mins)</option>
+        <option value="10:00 AM">10:00 AM</option>
+        </select>
+
+      <div class="payment-options-container">
+        <label class="label-group">Payment Method:</label>
+        <div class="payment-option" id="payment-option-card">
+          <input type="radio" id="pay-card" name="payment-method-option" value="Credit/Debit Card">
+          <label for="pay-card">Credit/Debit Card</label>
+          <div id="card-details-container" class="payment-details-input-container hidden">
+            <input type="text" id="card-number" placeholder="Card Number" class="mt-2">
+          </div>
+        </div>
+        <div class="payment-option" id="payment-option-mealplan">
+          <input type="radio" id="pay-meal-plan" name="payment-method-option" value="Meal Plan">
+          <label for="pay-meal-plan">Campus Meal Code / Plan</label>
+          <div id="meal-plan-details-container" class="payment-details-input-container hidden">
+            <input type="text" id="meal-plan-number" placeholder="Meal Plan Number" class="mt-2">
+          </div>
+        </div>
+        <div class="payment-option" id="payment-option-instore">
+          <input type="radio" id="pay-in-store" name="payment-method-option" value="Pay in Store">
+          <label for="pay-in-store">Pay in Store</label>
+          <div id="pay-in-store-message-container" class="payment-details-input-container hidden">
+             <p class="text-sm text-gray-600 mt-2">Payment will be collected at the restaurant.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="store-banner">
+      <p><strong>Chick-fil-A @ The Commons</strong> — Ready in ~15-20 minutes</p>
+    </section>
+
+    <section class="item-summary">
+      <h3 class="text-lg font-semibold mb-3">Your Order Summary</h3>
+      <div id="order-items-container">
+        </div>
+    </section>
+
+    <section class="totals">
+      <p>Subtotal: <span id="subtotal-amount">$0.00</span></p>
+      <p>Tax + Fees (approx. 8%): <span id="tax-amount">$0.00</span></p>
+      <hr />
+      <p><strong>Total: <span id="total-amount">$0.00</span></strong></p>
+    </section>
+
+    <div class="submit-area">
+      <button id="place-order-btn" class="placeorder-btn">Place Order</button>
+    </div>
+  </div>
+
+  <script src="order-review.js"></script>
+</body>
+</html>

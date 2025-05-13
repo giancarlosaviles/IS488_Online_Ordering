@@ -1,0 +1,65 @@
+/* confirmation.css - Kept minimal as Tailwind is now primary in confirmation.html */
+/* You can add specific overrides or styles here if Tailwind doesn't cover something,
+   or if you prefer to keep some distinct styles separate. */
+
+/*
+body {
+  background-color: #fff8dc;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.confirmation-box {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+h1 {
+  color: #ff9900;
+}
+
+.info {
+  margin-top: 20px;
+  text-align: left;
+}
+
+.info p {
+  margin: 8px 0;
+  font-size: 1.1em;
+}
+
+.info ul {
+  margin: 8px 0;
+  padding-left: 20px;
+}
+
+.store-id {
+  background-color: #ffcc00;
+  padding: 8px;
+  border-radius: 6px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+.highlight {
+  color: #000;
+  font-weight: bold;
+}
+*/
+
+/* The styles previously in confirmation.css have been largely integrated
+   into the <style> block of confirmation.html using Tailwind classes
+   or direct CSS-in-HTML for simplicity in this example.
+
+   For a larger project, you'd keep more CSS in this file and organize it.
+*/

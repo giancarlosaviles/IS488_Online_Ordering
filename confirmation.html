@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Order Confirmation - UMBC Eats</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --umbc-gold: #FFC20E;
+      --umbc-black: #000000;
+      --umbc-retriever-red: #CF102D;
+      --umbc-dark-grey: #374151;
+      --umbc-medium-grey: #6b7280;
+      --umbc-light-grey-bg: #f9fafb;
+      --umbc-container-bg: #fffef0; /* Light yellow to match order page */
+      --umbc-success-green: #10b981; /* Tailwind green-500 */
+      --umbc-button-text: var(--umbc-black);
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--umbc-light-grey-bg);
+      color: var(--umbc-dark-grey);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 1rem;
+      line-height: 1.6;
+    }
+    .confirmation-container {
+      background: var(--umbc-container-bg);
+      padding: 2.5rem; /* Increased padding */
+      border-radius: 0.75rem;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      border: 1px solid #fde68a; /* Light gold border */
+    }
+    .confirmation-container .icon {
+        font-size: 3rem; /* Larger icon */
+        color: var(--umbc-success-green);
+        margin-bottom: 0.5rem;
+    }
+    .confirmation-container h1 {
+      color: var(--umbc-success-green);
+      font-size: 2rem; /* Slightly smaller than order page */
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+    .confirmation-container .lead-text {
+        font-size: 1.125rem;
+        color: var(--umbc-medium-grey);
+        margin-bottom: 1.5rem;
+    }
+    .info-section {
+      margin-top: 1.5rem;
+      text-align: left;
+      border-top: 1px solid #fde68a; /* Light gold separator */
+      padding-top: 1.5rem;
+    }
+    .info-section p, .info-section div {
+      margin-bottom: 0.875rem; /* Increased spacing */
+      font-size: 1rem;
+      color: var(--umbc-dark-grey);
+    }
+    .info-section .highlight, .info-section strong {
+      font-weight: 600;
+      color: var(--umbc-black); /* Black for key details */
+    }
+    .info-section ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 0.5rem;
+    }
+    .info-section ul li {
+      padding: 0.625rem 0; /* Increased padding */
+      border-bottom: 1px dashed #feeaa0; /* Lighter gold dashed separator */
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9375rem; /* Slightly smaller item text */
+    }
+    .info-section ul li:last-child {
+      border-bottom: none;
+    }
+    .info-section .item-name { color: var(--umbc-medium-grey); }
+    .info-section .item-qty-price { font-weight: 500; color: var(--umbc-dark-grey); }
+
+    .store-id-banner { /* Renamed to restaurant-info-banner for clarity */
+      background-color: #fffbeb; /* Lighter gold/yellow */
+      color: #78350f;
+      padding: 0.875rem 1.25rem; /* Adjusted padding */
+      border-radius: 0.5rem;
+      margin-top: 1.5rem;
+      font-weight: 500;
+      border: 1px solid #fef3c7;
+    }
+    .actions {
+        margin-top: 2rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+    .actions a {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.375rem;
+        text-decoration: none;
+        font-weight: 600; /* Bolder button text */
+        transition: background-color 0.2s, transform 0.1s ease;
+        text-align: center;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    .help-link {
+        background-color: var(--umbc-gold);
+        color: var(--umbc-button-text);
+    }
+    .help-link:hover {
+        background-color: #e6ac00; /* Darker Gold */
+        transform: translateY(-1px);
+    }
+    .new-order-link {
+        background-color: var(--umbc-dark-grey);
+        color: white;
+    }
+    .new-order-link:hover {
+        background-color: var(--umbc-black);
+        transform: translateY(-1px);
+    }
+
+    @media (min-width: 640px) {
+        .actions {
+            flex-direction: row;
+            justify-content: center;
+        }
+    }
+  </style>
+</head>
+<body>
+  <div class="confirmation-container">
+    <div class="icon">🎉</div> <h1>Order Confirmed!</h1>
+    <p class="lead-text">Your order will be ready in approximately <span id="eta" class="highlight">15-20</span> minutes.</p>
+    <div class="info-section">
+      <p>Order for: <span id="user-name-display" class="highlight">Valued Customer</span></p>
+      <p>Pickup Time: <span id="pickup-time-display" class="highlight">Not Selected</span></p>
+      <p>Payment Method: <span id="payment-method-display" class="highlight">Not Selected</span></p>
+      
+      <div>
+        <p class="font-semibold mb-2">Items Ordered:</p>
+        <ul id="ordered-items-list">
+          <li><span class="item-name">Loading...</span> <span class="item-qty-price"></span></li>
+        </ul>
+      </div>
+      
+      <p class="mt-4">Subtotal: <span id="subtotal-display" class="highlight">$0.00</span></p>
+      <p>Tax + Fees: <span id="tax-display" class="highlight">$0.00</span></p>
+      <p class="text-xl font-bold mt-2">Total: <span id="total-display" class="highlight text-2xl">$0.00</span></p>
+    </div>
+
+    <div id="restaurant-info" class="store-id-banner">
+      Pickup at: <span class="font-bold">Chick-fil-A @ The Commons</span>
+    </div>
+
+    <div class="actions">
+      <a href="menu.html" class="new-order-link">Place Another Order</a>
+      <a href="help.html" class="help-link">Need Help?</a>
+    </div>
+  </div>
+
+  <script src="confirmation.js"></script>
+</body>
+</html>
+
