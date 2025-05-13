@@ -131,13 +131,29 @@ background-color: blue;
   display: inline-block
 } 
 
-.nav-bar {
-  background: #fff2e6; 
 
-  border-radius: 20px; 
-  padding: 15px 0;
+
+.nav-bar {
+  background: lightblue; 
+  backdrop-filter: blur(6px);
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 20px;
+  width: fit-content;
   display: flex;
   justify-content: center;
-   text-align: center; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
 
+
+
+
+.nav-bar a {
+  display: inline-block;
+}
+
+
+
+.nav-bar a:hover {
+  background-color: darkblue;
 }

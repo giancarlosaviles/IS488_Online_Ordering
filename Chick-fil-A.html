@@ -22,7 +22,7 @@
 
   <p>Thank you for choosing Chick-fil-A Menu. Here are the list of menu items we currently offer:</p>
 
-  <!-- FILTER BUTTONS -->
+
   <div id="myBtnContainer">
     <button class="btn active" onclick="filterSelection(this, 'all')">Show all</button>
     <button class="btn" onclick="filterSelection(this, 'chicken')">Chicken</button>
@@ -34,7 +34,7 @@
 
     <p class="number2">Drink Menu:</p>
 
-    <!-- SWEET TEA -->
+
     <div class="filterDiv sweet-tea">
       <label>
         <input type="checkbox" name="Food[]" value="Freshly-Brewed Iced Tea Unsweetened"> Freshly-Brewed Iced Tea Unsweetened
@@ -59,7 +59,7 @@
       </details>
     </div>
 
-    <!-- LEMONADE -->
+ 
     <div class="filterDiv lemonade">
       <label>
         <input type="checkbox" name="Food[]" value="Chick-fil-A® Lemonade"> Chick-fil-A® Lemonade
@@ -156,7 +156,6 @@
   </form>
 </div>
 
-<!-- JavaScript -->
 <script>
 function filterSelection(btn, category) {
   let items = document.getElementsByClassName("filterDiv");
