@@ -1,0 +1,9 @@
+
+CREATE TABLE reviews (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    restaurant VARCHAR(255) NOT NULL,
+    review TEXT NOT NULL,
+    stars INT NOT NULL,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
